@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Abdul%20Kadir/Desktop/New%20folder/my-app/app/page.tsx"],"sourcesContent":["import React from 'react'\n\nconst page = () => {\n  return (\n    <div>\n      \n    </div>\n  )\n}\n\nexport default page"],"names":[],"mappings":";;;;;;AAEA,MAAM,OAAO;IACX,qBACE,qRAAC;;;;;AAIL;uCAEe"}}]
+}
