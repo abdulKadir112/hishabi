@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { Gift, ArrowDown, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL 
-  || (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-      ? 'http://localhost:5000' 
-      : 'https://hishabi-api.vercel.app');
+// API_BASE সঠিকভাবে সেট করা হয়েছে (এটাই মূল পরিবর্তন)
+const API_BASE = process.env.NODE_ENV === 'production'
+  ? 'https://hishabi-api.vercel.app'   // আপনার Vercel backend domain
+  : 'http://localhost:5000';
 
 export default function Dashboard() {
   const [isLogged, setIsLogged] = useState(false);
@@ -74,7 +74,6 @@ export default function Dashboard() {
       formData.append('donorName', donation.donorName.trim());
       formData.append('donorPhone', donation.donorPhone.trim() || '');
       formData.append('donorAddress', donation.donorAddress.trim() || '');
-
       if (donation.donorImageFile) {
         formData.append('donorImage', donation.donorImageFile);
       }
@@ -82,25 +81,30 @@ export default function Dashboard() {
       formData.append('receiverName', donation.receiverName.trim());
       formData.append('receiverPhone', donation.receiverPhone.trim() || '');
       formData.append('receiverAddress', donation.receiverAddress.trim() || '');
-
       if (donation.receiverImageFile) {
         formData.append('receiverImage', donation.receiverImageFile);
       }
 
-      console.log('Sending donation to:', `${API_BASE}/hishab`);
+      // Debug: কোন URL-এ যাচ্ছে দেখার জন্য
+      const url = `${API_BASE}/hishab`;
+      console.log('Sending donation request to:', url);
 
-      const res = await fetch(`${API_BASE}/hishab`, {
+      const res = await fetch(url, {
         method: 'POST',
         body: formData,
       });
 
-      const result = await res.json();
+      const result = await res.json().catch(() => ({})); // যদি json না হয় তবুও চালিয়ে যাবে
 
       console.log('Response status:', res.status);
-      console.log('Response data:', result);
+      console.log('Response body:', result);
 
       if (!res.ok) {
-        throw new Error(result.error || result.message || `সার্ভার এরর: ${res.status}`);
+        throw new Error(
+          result.error ||
+          result.message ||
+          `সার্ভার এরর: ${res.status} ${res.statusText}`
+        );
       }
 
       if (!result.success) {
@@ -116,8 +120,8 @@ export default function Dashboard() {
       });
 
     } catch (err) {
-      console.error('Donation error:', err);
-      alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা'));
+      console.error('Donation failed:', err);
+      alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা। Console চেক করুন।'));
     } finally {
       setLoading(false);
     }
@@ -148,20 +152,25 @@ export default function Dashboard() {
         formData.append('receiverImage', expense.receiverImageFile);
       }
 
-      console.log('Sending expense to:', `${API_BASE}/hishab`);
+      const url = `${API_BASE}/hishab`;
+      console.log('Sending expense request to:', url);
 
-      const res = await fetch(`${API_BASE}/hishab`, {
+      const res = await fetch(url, {
         method: 'POST',
         body: formData,
       });
 
-      const result = await res.json();
+      const result = await res.json().catch(() => ({}));
 
       console.log('Response status:', res.status);
-      console.log('Response data:', result);
+      console.log('Response body:', result);
 
       if (!res.ok) {
-        throw new Error(result.error || result.message || `সার্ভার এরর: ${res.status}`);
+        throw new Error(
+          result.error ||
+          result.message ||
+          `সার্ভার এরর: ${res.status} ${res.statusText}`
+        );
       }
 
       if (!result.success) {
@@ -176,14 +185,13 @@ export default function Dashboard() {
       });
 
     } catch (err) {
-      console.error('Expense error:', err);
-      alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা'));
+      console.error('Expense failed:', err);
+      alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা। Console চেক করুন।'));
     } finally {
       setLoading(false);
     }
   };
 
-  // লগইন ফর্ম (অপরিবর্তিত)
   if (!isLogged) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
@@ -208,7 +216,6 @@ export default function Dashboard() {
     );
   }
 
-  // ড্যাশবোর্ড (অপরিবর্তিত লেআউট + উন্নত ফাংশন)
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-10">
       <div className="max-w-7xl mx-auto">
