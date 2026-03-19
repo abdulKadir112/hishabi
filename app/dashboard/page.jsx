@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 // API_BASE সঠিকভাবে সেট করা হয়েছে (এটাই মূল পরিবর্তন)
 const API_BASE = process.env.NODE_ENV === 'production'
-  ? 'https://hishabi-api.vercel.app/hishab'   // আপনার Vercel backend domain
+  ? 'https://hishabi-api.vercel.app'   // আপনার Vercel backend domain
   : 'http://localhost:5000';
 
 export default function Dashboard() {
