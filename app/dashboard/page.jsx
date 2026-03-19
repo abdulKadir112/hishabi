@@ -1,10 +1,14 @@
 'use client';
+
 import { useState } from 'react';
 import Image from 'next/image';
 import { Gift, ArrowDown, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL 
+  || (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+      ? 'http://localhost:5000' 
+      : 'https://hishabi-api.vercel.app');
 
 export default function Dashboard() {
   const [isLogged, setIsLogged] = useState(false);
@@ -65,21 +69,25 @@ export default function Dashboard() {
 
       formData.append('type', 'donation');
       formData.append('amount', donation.amount);
-      formData.append('note', donation.reason.trim());
+      formData.append('note', donation.reason.trim() || '');
 
       formData.append('donorName', donation.donorName.trim());
-      formData.append('donorPhone', donation.donorPhone.trim());
-      formData.append('donorAddress', donation.donorAddress.trim());
+      formData.append('donorPhone', donation.donorPhone.trim() || '');
+      formData.append('donorAddress', donation.donorAddress.trim() || '');
+
       if (donation.donorImageFile) {
         formData.append('donorImage', donation.donorImageFile);
       }
 
       formData.append('receiverName', donation.receiverName.trim());
-      formData.append('receiverPhone', donation.receiverPhone.trim());
-      formData.append('receiverAddress', donation.receiverAddress.trim());
+      formData.append('receiverPhone', donation.receiverPhone.trim() || '');
+      formData.append('receiverAddress', donation.receiverAddress.trim() || '');
+
       if (donation.receiverImageFile) {
         formData.append('receiverImage', donation.receiverImageFile);
       }
+
+      console.log('Sending donation to:', `${API_BASE}/hishab`);
 
       const res = await fetch(`${API_BASE}/hishab`, {
         method: 'POST',
@@ -88,8 +96,15 @@ export default function Dashboard() {
 
       const result = await res.json();
 
+      console.log('Response status:', res.status);
+      console.log('Response data:', result);
+
       if (!res.ok) {
-        throw new Error(result.error || 'সার্ভারে সমস্যা হয়েছে');
+        throw new Error(result.error || result.message || `সার্ভার এরর: ${res.status}`);
+      }
+
+      if (!result.success) {
+        throw new Error(result.message || 'ডাটা সেভ হয়নি');
       }
 
       alert('দান সফলভাবে যোগ হয়েছে!');
@@ -101,8 +116,8 @@ export default function Dashboard() {
       });
 
     } catch (err) {
-      console.error(err);
-      alert('দান যোগ করতে ব্যর্থ: ' + err.message);
+      console.error('Donation error:', err);
+      alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা'));
     } finally {
       setLoading(false);
     }
@@ -123,15 +138,17 @@ export default function Dashboard() {
 
       formData.append('type', 'expense');
       formData.append('amount', expense.amount);
-      formData.append('note', expense.reason.trim());
+      formData.append('note', expense.reason.trim() || '');
 
       formData.append('receiverName', expense.receiverName.trim());
-      formData.append('receiverPhone', expense.receiverPhone.trim());
-      formData.append('receiverAddress', expense.receiverAddress.trim());
+      formData.append('receiverPhone', expense.receiverPhone.trim() || '');
+      formData.append('receiverAddress', expense.receiverAddress.trim() || '');
 
       if (expense.receiverImageFile) {
         formData.append('receiverImage', expense.receiverImageFile);
       }
+
+      console.log('Sending expense to:', `${API_BASE}/hishab`);
 
       const res = await fetch(`${API_BASE}/hishab`, {
         method: 'POST',
@@ -140,8 +157,15 @@ export default function Dashboard() {
 
       const result = await res.json();
 
+      console.log('Response status:', res.status);
+      console.log('Response data:', result);
+
       if (!res.ok) {
-        throw new Error(result.error || 'সার্ভারে সমস্যা হয়েছে');
+        throw new Error(result.error || result.message || `সার্ভার এরর: ${res.status}`);
+      }
+
+      if (!result.success) {
+        throw new Error(result.message || 'ডাটা সেভ হয়নি');
       }
 
       alert('খরচ সফলভাবে রেকর্ড হয়েছে!');
@@ -152,13 +176,14 @@ export default function Dashboard() {
       });
 
     } catch (err) {
-      console.error(err);
-      alert('খরচ যোগ করতে ব্যর্থ: ' + err.message);
+      console.error('Expense error:', err);
+      alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'অজানা সমস্যা'));
     } finally {
       setLoading(false);
     }
   };
 
+  // লগইন ফর্ম (অপরিবর্তিত)
   if (!isLogged) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
@@ -183,6 +208,7 @@ export default function Dashboard() {
     );
   }
 
+  // ড্যাশবোর্ড (অপরিবর্তিত লেআউট + উন্নত ফাংশন)
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-10">
       <div className="max-w-7xl mx-auto">
