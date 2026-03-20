@@ -6,47 +6,45 @@ __turbopack_context__.s([
     "useStore",
     ()=>useStore
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/zustand/esm/react.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/zustand/esm/middleware.mjs [app-client] (ecmascript)");
+// lib/store.js   বা   app/lib/store.js
 'use client';
 ;
 ;
-const API_BASE = 'http://localhost:5000';
+const API_BASE = ("TURBOPACK compile-time value", "https://hishabi-api.vercel.app") || (("TURBOPACK compile-time truthy", 1) ? 'http://localhost:5000' : "TURBOPACK unreachable");
 const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["create"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["persist"])((set, get)=>({
-        members: [],
+        // persist হবে না (বড় ডাটা)
         transactions: [],
+        // persist হবে (ছোট ডাটা)
+        members: [],
         totalDonation: 0,
         totalExpense: 0,
         netBalance: 0,
         isLoading: false,
         fetchData: async ()=>{
+            set({
+                isLoading: true
+            });
             try {
-                set({
-                    isLoading: true
-                });
                 const res = await fetch(`${API_BASE}/hishab`);
                 if (!res.ok) {
                     const errText = await res.text();
                     throw new Error(`HTTP ${res.status} - ${errText}`);
                 }
                 const data = await res.json();
-                console.log('API Response:', data);
                 const transactions = Array.isArray(data.transactions) ? data.transactions : [];
-                // totals নেওয়া – backend থেকে না আসলে নিজে হিসাব করা
                 let totalDonation = Number(data.totalDonation) || 0;
                 let totalExpense = Number(data.totalExpense) || 0;
                 let netBalance = Number(data.netBalance) || 0;
+                // যদি backend থেকে total না আসে তাহলে নিজে ক্যালকুলেট
                 if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
                     totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     netBalance = totalDonation - totalExpense;
-                    console.log('Fallback totals calculated:', {
-                        totalDonation,
-                        totalExpense,
-                        netBalance
-                    });
                 }
-                // শীর্ষ দানকারীদের জন্য members তৈরি করা
+                // members derive from transactions (top donors)
                 const memberMap = new Map();
                 transactions.forEach((tx)=>{
                     if (tx.type === 'donation' && tx.donorName?.trim()) {
@@ -58,16 +56,15 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                                 name,
                                 phone: tx.donorPhone || '',
                                 address: tx.donorAddress || '',
-                                avatar: tx.donorImage || tx.donorAvatar || '',
-                                totalDonated: 0,
-                                totalReceived: 0
+                                avatar: tx.donorImage || '',
+                                totalDonated: 0
                             });
                         }
                         memberMap.get(key).totalDonated += Number(tx.amount) || 0;
                     }
                 });
                 const derivedMembers = Array.from(memberMap.values());
-                console.log('Derived members for top donors:', derivedMembers);
+                // state update
                 set({
                     transactions,
                     members: derivedMembers,
@@ -83,55 +80,51 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                 });
             }
         },
-        addTransaction: async (tx)=>{
+        addTransaction: async (formData)=>{
             try {
                 const res = await fetch(`${API_BASE}/hishab`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(tx)
+                    body: formData
                 });
-                if (!res.ok) throw new Error('Failed to add');
+                if (!res.ok) {
+                    const errText = await res.text();
+                    throw new Error(`Add failed: ${errText}`);
+                }
                 await get().fetchData();
                 return true;
             } catch (err) {
-                console.error('Add error:', err);
+                console.error('Add transaction error:', err);
                 return false;
             }
         },
         deleteTransaction: async (id)=>{
             try {
-                await fetch(`${API_BASE}/hishab/${id}`, {
+                const res = await fetch(`${API_BASE}/hishab/${id}`, {
                     method: 'DELETE'
                 });
+                if (!res.ok) throw new Error('Delete failed');
                 await get().fetchData();
             } catch (err) {
                 console.error('Delete error:', err);
             }
-        },
-        addMember: (data)=>set((state)=>({
-                    members: [
-                        ...state.members,
-                        {
-                            id: Date.now().toString(),
-                            name: data.name.trim(),
-                            phone: data.phone || '',
-                            address: data.address || '',
-                            avatar: data.avatar || '',
-                            totalDonated: 0,
-                            totalReceived: 0
-                        }
-                    ]
-                })),
-        updateMember: (id, updates)=>set((state)=>({
-                    members: state.members.map((m)=>m.id === id ? {
-                            ...m,
-                            ...updates
-                        } : m)
-                }))
+        }
     }), {
-    name: 'group-fund-final-v5'
+    name: 'group-fund-final-v5',
+    // এটাই মূল পরিবর্তন — transactions persist করা হচ্ছে না
+    partialize: (state)=>({
+            members: state.members,
+            totalDonation: state.totalDonation,
+            totalExpense: state.totalExpense,
+            netBalance: state.netBalance
+        }),
+    // optional: storage limit check করতে চাইলে
+    onRehydrateStorage: ()=>{
+        return (state, error)=>{
+            if (error) {
+                console.warn('Rehydrate storage error:', error);
+            }
+        };
+    }
 }));
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
