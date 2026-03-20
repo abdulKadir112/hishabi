@@ -203,7 +203,7 @@ function Dashboard() {
         try {
             const formData = new FormData();
             formData.append('type', 'donation');
-            formData.append('amount', donation.amount);
+            formData.append('amount', donation.amount.toString()); // string হিসেবে পাঠানো
             formData.append('note', donation.reason.trim() || '');
             formData.append('donorName', donation.donorName.trim());
             formData.append('donorPhone', donation.donorPhone.trim() || '');
@@ -211,13 +211,44 @@ function Dashboard() {
             formData.append('receiverName', donation.receiverName.trim());
             formData.append('receiverPhone', donation.receiverPhone.trim() || '');
             formData.append('receiverAddress', donation.receiverAddress.trim() || '');
-            const res = await fetch(`${API_BASE}/hishab`, {
-                method: 'POST',
-                body: formData
-            });
-            if (!res.ok) {
-                const err = await res.text();
-                throw new Error(err || 'দান যোগ করতে ব্যর্থ');
+            // Debug: কী পাঠানো হচ্ছে দেখার জন্য
+            console.log('Sending donation FormData:');
+            for (let [key, value] of formData.entries()){
+                console.log(`${key}: ${value}`);
+            }
+            // const res = await fetch(`${API_BASE}/hishab`, {
+            //   method: 'POST',
+            //   body: formData,
+            // });
+            // const res = await fetch(`/api/hishab`, {
+            //   method: 'POST',
+            //   body: formData,
+            // });
+            let res;
+            try {
+                // প্রথমে Vercel API try করবে
+                res = await fetch(`/api/hishab`, {
+                    method: 'POST',
+                    body: formData
+                });
+                if (!res.ok) throw new Error('Vercel API failed');
+            } catch (err) {
+                console.warn('Vercel API failed, trying backend...', err);
+                // fallback → external backend
+                res = await fetch(`${API_BASE}/hishab`, {
+                    method: 'POST',
+                    body: formData
+                });
+            }
+            let result;
+            try {
+                result = await res.json();
+            } catch  {
+                result = {};
+            }
+            console.log('Backend response:', result);
+            if (!res.ok || !result.success) {
+                throw new Error(result.error || result.message || 'দান যোগ করতে ব্যর্থ');
             }
             alert('দান সফলভাবে যোগ হয়েছে!');
             setDonation({
@@ -232,7 +263,8 @@ function Dashboard() {
             });
             fetchData();
         } catch (err) {
-            alert('দান যোগ করতে ব্যর্থ: ' + err.message);
+            console.error('Donation error:', err);
+            alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
         } finally{
             setLoading(false);
         }
@@ -245,18 +277,29 @@ function Dashboard() {
         try {
             const formData = new FormData();
             formData.append('type', 'expense');
-            formData.append('amount', expense.amount);
+            formData.append('amount', expense.amount.toString()); // string হিসেবে
             formData.append('note', expense.reason.trim() || '');
             formData.append('receiverName', expense.receiverName.trim());
             formData.append('receiverPhone', expense.receiverPhone.trim() || '');
             formData.append('receiverAddress', expense.receiverAddress.trim() || '');
+            // Debug
+            console.log('Sending expense FormData:');
+            for (let [key, value] of formData.entries()){
+                console.log(`${key}: ${value}`);
+            }
             const res = await fetch(`${API_BASE}/hishab`, {
                 method: 'POST',
                 body: formData
             });
-            if (!res.ok) {
-                const err = await res.text();
-                throw new Error(err || 'খরচ যোগ করতে ব্যর্থ');
+            let result;
+            try {
+                result = await res.json();
+            } catch  {
+                result = {};
+            }
+            console.log('Backend response:', result);
+            if (!res.ok || !result.success) {
+                throw new Error(result.error || result.message || 'খরচ যোগ করতে ব্যর্থ');
             }
             alert('খরচ সফলভাবে রেকর্ড হয়েছে!');
             setExpense({
@@ -268,7 +311,8 @@ function Dashboard() {
             });
             fetchData();
         } catch (err) {
-            alert('খরচ যোগ করতে ব্যর্থ: ' + err.message);
+            console.error('Expense error:', err);
+            alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
         } finally{
             setLoading(false);
         }
@@ -280,7 +324,7 @@ function Dashboard() {
             await deleteTransaction(id);
             alert('লেনদেন মুছে ফেলা হয়েছে');
         } catch (err) {
-            alert('মুছে ফেলতে ব্যর্থ: ' + err.message);
+            alert('মুছে ফেলতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
         } finally{
             setLoading(false);
         }
@@ -296,7 +340,7 @@ function Dashboard() {
         try {
             const formData = new FormData();
             formData.append('type', editingTx.type);
-            formData.append('amount', editingTx.amount);
+            formData.append('amount', (editingTx.amount || 0).toString());
             formData.append('note', editingTx.note || editingTx.reason || '');
             if (editingTx.type === 'donation') {
                 formData.append('donorName', editingTx.donorName || '');
@@ -315,7 +359,7 @@ function Dashboard() {
             setEditingTx(null);
             fetchData();
         } catch (err) {
-            alert('আপডেট ব্যর্থ: ' + err.message);
+            alert('আপডেট ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
         } finally{
             setLoading(false);
         }
@@ -331,7 +375,7 @@ function Dashboard() {
                         children: "অ্যাডমিন লগইন"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 190,
+                        lineNumber: 257,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -342,7 +386,7 @@ function Dashboard() {
                         className: "bg-white/20 border border-white/30 p-4 rounded-xl w-full text-xl mb-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-emerald-400"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 191,
+                        lineNumber: 258,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -351,7 +395,7 @@ function Dashboard() {
                         children: "লগইন"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 198,
+                        lineNumber: 265,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -359,18 +403,18 @@ function Dashboard() {
                         children: "demo password: admin123"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 204,
+                        lineNumber: 271,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                lineNumber: 189,
+                lineNumber: 256,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-            lineNumber: 188,
+            lineNumber: 255,
             columnNumber: 7
         }, this);
     }
@@ -390,24 +434,24 @@ function Dashboard() {
                                     size: 24
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 216,
+                                    lineNumber: 283,
                                     columnNumber: 15
                                 }, this),
                                 "হোমে ফিরে যান"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 215,
+                            lineNumber: 282,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 214,
+                        lineNumber: 281,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                    lineNumber: 213,
+                    lineNumber: 280,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -415,7 +459,7 @@ function Dashboard() {
                     children: "অ্যাডমিন ড্যাশবোর্ড"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                    lineNumber: 222,
+                    lineNumber: 289,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -432,14 +476,14 @@ function Dashboard() {
                                             className: "text-purple-600"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 230,
+                                            lineNumber: 297,
                                             columnNumber: 15
                                         }, this),
                                         " নতুন দান রেকর্ড"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 229,
+                                    lineNumber: 296,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -453,7 +497,7 @@ function Dashboard() {
                                                     children: "দাতা"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 301,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -466,7 +510,7 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-purple-300 bg-white text-gray-900 placeholder-purple-400/60 focus:border-purple-500 focus:ring-2 focus:ring-purple-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 235,
+                                                    lineNumber: 302,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -479,7 +523,7 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-purple-300 bg-white text-gray-900 placeholder-purple-400/60 focus:border-purple-500 focus:ring-2 focus:ring-purple-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 308,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -492,13 +536,13 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-purple-300 bg-white text-gray-900 placeholder-purple-400/60 focus:border-purple-500 focus:ring-2 focus:ring-purple-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 247,
+                                                    lineNumber: 314,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 233,
+                                            lineNumber: 300,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,7 +553,7 @@ function Dashboard() {
                                                     children: "গ্রহীতা"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 322,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -522,7 +566,7 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-blue-300 bg-white text-gray-900 placeholder-blue-400/60 focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 256,
+                                                    lineNumber: 323,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -535,7 +579,7 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-blue-300 bg-white text-gray-900 placeholder-blue-400/60 focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 262,
+                                                    lineNumber: 329,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -548,19 +592,19 @@ function Dashboard() {
                                                     className: "w-full p-4 rounded-xl border border-blue-300 bg-white text-gray-900 placeholder-blue-400/60 focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 outline-none transition-all duration-200"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 268,
+                                                    lineNumber: 335,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 254,
+                                            lineNumber: 321,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 232,
+                                    lineNumber: 299,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -578,7 +622,7 @@ function Dashboard() {
                                             min: "1"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 277,
+                                            lineNumber: 344,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -591,7 +635,7 @@ function Dashboard() {
                                             className: "w-full p-5 rounded-xl border border-indigo-300 bg-white text-gray-900 placeholder-indigo-400/60 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400/50 outline-none transition-all duration-200"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 285,
+                                            lineNumber: 352,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -603,26 +647,26 @@ function Dashboard() {
                                                     size: 28
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 296,
+                                                    lineNumber: 363,
                                                     columnNumber: 17
                                                 }, this),
                                                 loading ? 'যোগ হচ্ছে...' : 'দান রেকর্ড করুন'
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 291,
+                                            lineNumber: 358,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 276,
+                                    lineNumber: 343,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 228,
+                            lineNumber: 295,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -636,14 +680,14 @@ function Dashboard() {
                                             className: "text-red-600"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 305,
+                                            lineNumber: 372,
                                             columnNumber: 15
                                         }, this),
                                         " নতুন খরচ রেকর্ড"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 304,
+                                    lineNumber: 371,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -657,7 +701,7 @@ function Dashboard() {
                                                     children: "গ্রহীতা (যাকে টাকা দেওয়া হলো)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 376,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -673,7 +717,7 @@ function Dashboard() {
                                                             className: "w-full p-4 rounded-xl border border-red-300 bg-white text-gray-900 placeholder-red-400/60 focus:border-red-500 focus:ring-2 focus:ring-red-400/50 outline-none transition-all duration-200"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                            lineNumber: 313,
+                                                            lineNumber: 380,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -686,7 +730,7 @@ function Dashboard() {
                                                             className: "w-full p-4 rounded-xl border border-red-300 bg-white text-gray-900 placeholder-red-400/60 focus:border-red-500 focus:ring-2 focus:ring-red-400/50 outline-none transition-all duration-200"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                            lineNumber: 319,
+                                                            lineNumber: 386,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -699,19 +743,19 @@ function Dashboard() {
                                                             className: "w-full p-4 rounded-xl border border-red-300 bg-white text-gray-900 placeholder-red-400/60 focus:border-red-500 focus:ring-2 focus:ring-red-400/50 outline-none transition-all duration-200"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                            lineNumber: 325,
+                                                            lineNumber: 392,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 312,
+                                                    lineNumber: 379,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 308,
+                                            lineNumber: 375,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -726,7 +770,7 @@ function Dashboard() {
                                             min: "1"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 333,
+                                            lineNumber: 400,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -739,7 +783,7 @@ function Dashboard() {
                                             className: "w-full p-5 rounded-xl border border-rose-300 bg-white text-gray-900 placeholder-rose-400/60 focus:border-rose-500 focus:ring-2 focus:ring-rose-400/50 outline-none transition-all duration-200"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 341,
+                                            lineNumber: 408,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -751,32 +795,32 @@ function Dashboard() {
                                                     size: 28
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                    lineNumber: 352,
+                                                    lineNumber: 419,
                                                     columnNumber: 17
                                                 }, this),
                                                 loading ? 'যোগ হচ্ছে...' : 'খরচ রেকর্ড করুন'
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                            lineNumber: 347,
+                                            lineNumber: 414,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 307,
+                                    lineNumber: 374,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 303,
+                            lineNumber: 370,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                    lineNumber: 226,
+                    lineNumber: 293,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -792,7 +836,7 @@ function Dashboard() {
                                         children: "সকল লেনদেন"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 363,
+                                        lineNumber: 430,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -803,18 +847,18 @@ function Dashboard() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 364,
+                                        lineNumber: 431,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                lineNumber: 362,
+                                lineNumber: 429,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 361,
+                            lineNumber: 428,
                             columnNumber: 11
                         }, this),
                         transactions.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -825,7 +869,7 @@ function Dashboard() {
                                     children: "কোনো লেনদেন এখনো যোগ করা হয়নি"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 372,
+                                    lineNumber: 439,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -833,13 +877,13 @@ function Dashboard() {
                                     children: "উপরের ফর্ম থেকে নতুন দান বা খরচ যোগ করুন"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 373,
+                                    lineNumber: 440,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 371,
+                            lineNumber: 438,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "divide-y divide-gray-100",
@@ -861,7 +905,7 @@ function Dashboard() {
                                                                 children: isDonation ? '+' : '-'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                lineNumber: 388,
+                                                                lineNumber: 454,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -871,7 +915,7 @@ function Dashboard() {
                                                                         children: isDonation ? `${t.donorName || 'অজ্ঞাত'} → ${t.receiverName || 'অজ্ঞাত'}` : `খরচ: ${t.receiverName || 'অজ্ঞাত'}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                        lineNumber: 396,
+                                                                        lineNumber: 462,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -883,19 +927,19 @@ function Dashboard() {
                                                                         }) : 'তারিখ নেই'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                        lineNumber: 401,
+                                                                        lineNumber: 467,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                lineNumber: 395,
+                                                                lineNumber: 461,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                        lineNumber: 387,
+                                                        lineNumber: 453,
                                                         columnNumber: 25
                                                     }, this),
                                                     t.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -903,13 +947,13 @@ function Dashboard() {
                                                         children: t.note
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 480,
                                                         columnNumber: 27
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 386,
+                                                lineNumber: 452,
                                                 columnNumber: 23
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -924,7 +968,7 @@ function Dashboard() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                        lineNumber: 422,
+                                                        lineNumber: 487,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -938,12 +982,12 @@ function Dashboard() {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                    lineNumber: 436,
+                                                                    lineNumber: 501,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                lineNumber: 431,
+                                                                lineNumber: 496,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -954,47 +998,47 @@ function Dashboard() {
                                                                     size: 18
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                    lineNumber: 443,
+                                                                    lineNumber: 508,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                                lineNumber: 438,
+                                                                lineNumber: 503,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                        lineNumber: 430,
+                                                        lineNumber: 495,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 421,
+                                                lineNumber: 486,
                                                 columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 384,
+                                        lineNumber: 451,
                                         columnNumber: 21
                                     }, this)
                                 }, t._id || t.id, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                    lineNumber: 380,
+                                    lineNumber: 447,
                                     columnNumber: 19
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                            lineNumber: 376,
+                            lineNumber: 443,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                    lineNumber: 360,
+                    lineNumber: 427,
                     columnNumber: 9
                 }, this),
                 editingTx && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1007,7 +1051,7 @@ function Dashboard() {
                                 children: "লেনদেন এডিট করুন"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                lineNumber: 459,
+                                lineNumber: 524,
                                 columnNumber: 15
                             }, this),
                             editingTx.type === 'donation' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1020,7 +1064,7 @@ function Dashboard() {
                                                 children: "দাতা"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 464,
+                                                lineNumber: 529,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1033,7 +1077,7 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-purple-300 rounded-xl focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 465,
+                                                lineNumber: 530,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1046,7 +1090,7 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-purple-300 rounded-xl focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 471,
+                                                lineNumber: 536,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1059,13 +1103,13 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-purple-300 rounded-xl focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 477,
+                                                lineNumber: 542,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 463,
+                                        lineNumber: 528,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1076,7 +1120,7 @@ function Dashboard() {
                                                 children: "গ্রহীতা"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 486,
+                                                lineNumber: 551,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1089,7 +1133,7 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-blue-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 487,
+                                                lineNumber: 552,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1102,7 +1146,7 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-blue-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 493,
+                                                lineNumber: 558,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1115,13 +1159,13 @@ function Dashboard() {
                                                 className: "w-full p-3 border border-blue-300 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
                                             }, void 0, false, {
                                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                                lineNumber: 499,
+                                                lineNumber: 564,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 485,
+                                        lineNumber: 550,
                                         columnNumber: 19
                                     }, this)
                                 ]
@@ -1133,7 +1177,7 @@ function Dashboard() {
                                         children: "গ্রহীতা"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 509,
+                                        lineNumber: 574,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1146,7 +1190,7 @@ function Dashboard() {
                                         className: "w-full p-3 border border-red-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 510,
+                                        lineNumber: 575,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1159,7 +1203,7 @@ function Dashboard() {
                                         className: "w-full p-3 border border-red-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 516,
+                                        lineNumber: 581,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1172,13 +1216,13 @@ function Dashboard() {
                                         className: "w-full p-3 border border-red-300 rounded-xl focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 522,
+                                        lineNumber: 587,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                lineNumber: 508,
+                                lineNumber: 573,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1196,7 +1240,7 @@ function Dashboard() {
                                         min: "1"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 532,
+                                        lineNumber: 597,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1209,13 +1253,13 @@ function Dashboard() {
                                         className: "w-full p-3 border border-gray-300 rounded-xl focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 540,
+                                        lineNumber: 605,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                lineNumber: 531,
+                                lineNumber: 596,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1227,7 +1271,7 @@ function Dashboard() {
                                         children: "বাতিল"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 549,
+                                        lineNumber: 614,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1237,35 +1281,35 @@ function Dashboard() {
                                         children: loading ? 'আপডেট হচ্ছে...' : 'সেভ করুন'
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                        lineNumber: 555,
+                                        lineNumber: 620,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                                lineNumber: 548,
+                                lineNumber: 613,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                        lineNumber: 458,
+                        lineNumber: 523,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-                    lineNumber: 457,
+                    lineNumber: 522,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-            lineNumber: 212,
+            lineNumber: 279,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/New folder/front-end/my-app/app/dashboard/page.jsx",
-        lineNumber: 211,
+        lineNumber: 278,
         columnNumber: 5
     }, this);
 }

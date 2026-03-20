@@ -63,10 +63,11 @@ export default function Dashboard() {
     }
 
     setLoading(true);
+
     try {
       const formData = new FormData();
       formData.append('type', 'donation');
-      formData.append('amount', donation.amount);
+      formData.append('amount', donation.amount.toString()); // string হিসেবে পাঠানো
       formData.append('note', donation.reason.trim() || '');
       formData.append('donorName', donation.donorName.trim());
       formData.append('donorPhone', donation.donorPhone.trim() || '');
@@ -75,10 +76,55 @@ export default function Dashboard() {
       formData.append('receiverPhone', donation.receiverPhone.trim() || '');
       formData.append('receiverAddress', donation.receiverAddress.trim() || '');
 
-      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || 'দান যোগ করতে ব্যর্থ');
+      // Debug: কী পাঠানো হচ্ছে দেখার জন্য
+      console.log('Sending donation FormData:');
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+
+      // const res = await fetch(`${API_BASE}/hishab`, {
+      //   method: 'POST',
+      //   body: formData,
+      // });
+
+      // const res = await fetch(`/api/hishab`, {
+      //   method: 'POST',
+      //   body: formData,
+      // });
+
+      let res;
+
+try {
+  // প্রথমে Vercel API try করবে
+  res = await fetch(`/api/hishab`, {
+    method: 'POST',
+    body: formData,
+  });
+
+  if (!res.ok) throw new Error('Vercel API failed');
+
+} catch (err) {
+  console.warn('Vercel API failed, trying backend...', err);
+
+  // fallback → external backend
+  res = await fetch(`${API_BASE}/hishab`, {
+    method: 'POST',
+    body: formData,
+  });
+}
+
+
+      let result;
+      try {
+        result = await res.json();
+      } catch {
+        result = {};
+      }
+
+      console.log('Backend response:', result);
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || result.message || 'দান যোগ করতে ব্যর্থ');
       }
 
       alert('দান সফলভাবে যোগ হয়েছে!');
@@ -89,7 +135,8 @@ export default function Dashboard() {
       });
       fetchData();
     } catch (err) {
-      alert('দান যোগ করতে ব্যর্থ: ' + err.message);
+      console.error('Donation error:', err);
+      alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
     } finally {
       setLoading(false);
     }
@@ -105,19 +152,38 @@ export default function Dashboard() {
     }
 
     setLoading(true);
+
     try {
       const formData = new FormData();
       formData.append('type', 'expense');
-      formData.append('amount', expense.amount);
+      formData.append('amount', expense.amount.toString()); // string হিসেবে
       formData.append('note', expense.reason.trim() || '');
       formData.append('receiverName', expense.receiverName.trim());
       formData.append('receiverPhone', expense.receiverPhone.trim() || '');
       formData.append('receiverAddress', expense.receiverAddress.trim() || '');
 
-      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || 'খরচ যোগ করতে ব্যর্থ');
+      // Debug
+      console.log('Sending expense FormData:');
+      for (let [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+
+      const res = await fetch(`${API_BASE}/hishab`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      let result;
+      try {
+        result = await res.json();
+      } catch {
+        result = {};
+      }
+
+      console.log('Backend response:', result);
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || result.message || 'খরচ যোগ করতে ব্যর্থ');
       }
 
       alert('খরচ সফলভাবে রেকর্ড হয়েছে!');
@@ -127,7 +193,8 @@ export default function Dashboard() {
       });
       fetchData();
     } catch (err) {
-      alert('খরচ যোগ করতে ব্যর্থ: ' + err.message);
+      console.error('Expense error:', err);
+      alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
     } finally {
       setLoading(false);
     }
@@ -140,7 +207,7 @@ export default function Dashboard() {
       await deleteTransaction(id);
       alert('লেনদেন মুছে ফেলা হয়েছে');
     } catch (err) {
-      alert('মুছে ফেলতে ব্যর্থ: ' + err.message);
+      alert('মুছে ফেলতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
     } finally {
       setLoading(false);
     }
@@ -156,7 +223,7 @@ export default function Dashboard() {
     try {
       const formData = new FormData();
       formData.append('type', editingTx.type);
-      formData.append('amount', editingTx.amount);
+      formData.append('amount', (editingTx.amount || 0).toString());
       formData.append('note', editingTx.note || editingTx.reason || '');
 
       if (editingTx.type === 'donation') {
@@ -177,7 +244,7 @@ export default function Dashboard() {
       setEditingTx(null);
       fetchData();
     } catch (err) {
-      alert('আপডেট ব্যর্থ: ' + err.message);
+      alert('আপডেট ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
     } finally {
       setLoading(false);
     }
@@ -299,7 +366,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* খরচ ফর্ম */}
+          {/* খরচ ফর্ম – ডিজাইন একদম আগের মতো */}
           <div className="bg-white p-8 rounded-3xl shadow-2xl border border-red-100">
             <h2 className="text-3xl font-bold mb-8 text-red-800 flex items-center gap-3">
               <ArrowDown size={32} className="text-red-600" /> নতুন খরচ রেকর্ড
@@ -356,7 +423,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* সকল লেনদেন সেকশন – ডিজাইন ম্যাচ করা */}
+        {/* সকল লেনদেন সেকশন – একদম আগের মতো */}
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden mb-12">
           <div className="p-8 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
             <h2 className="text-3xl font-extrabold text-gray-800 flex items-center gap-3">
@@ -382,7 +449,6 @@ export default function Dashboard() {
                     className="p-6 hover:bg-gray-50/80 transition-colors duration-150"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                      {/* Left - Info */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-3 mb-2">
                           <div
@@ -417,7 +483,6 @@ export default function Dashboard() {
                         )}
                       </div>
 
-                      {/* Right - Amount + Actions */}
                       <div className="flex items-center gap-6 sm:gap-8">
                         <p
                           className={`font-bold text-2xl whitespace-nowrap ${
@@ -452,7 +517,7 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* Edit Modal – আগের মতোই রাখা হয়েছে */}
+        {/* Edit Modal – একদম আগের মতো */}
         {editingTx && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto">
