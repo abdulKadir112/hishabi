@@ -1,7 +1,21 @@
-[00:00:03.557] Server  LOG     ✓ Ready in 2.7s
-[00:00:11.092] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:13.567] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
-[00:00:13.570] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
-[00:06:06.502] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:07.606] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
-[00:06:07.623] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
+[00:00:03.253] Server  LOG     ✓ Ready in 2.5s
+[00:00:09.328] Server  LOG     ○ Compiling / ...
+[00:00:12.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.807] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
+[00:00:14.811] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
+[00:00:26.434] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.865] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.595] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.360] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
+[00:00:28.366] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
+[00:00:31.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:50.586] Browser LOG     Sending donation request to: http://localhost:5000/hishab
+[00:01:02.942] Browser LOG     Response status: 201
+[00:01:02.942] Browser LOG     Response body: {"insertedId":"69bd07490e82c141e7cd9bbc","message":"Transaction added successfully","success":true}
+[00:01:05.639] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
+[00:01:05.644] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
+[00:01:06.762] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773897426252-gkovhu.jpeg" "received" null
+[00:01:06.768] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/uploads/1773894828534-97uh0z.png" "received" null
+[00:05:06.896] Server  LOG       Reload env: .env.local
+[00:05:08.248] Server  LOG     ✓ Compiled in 942ms
