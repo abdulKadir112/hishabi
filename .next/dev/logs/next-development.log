@@ -1,174 +1,24 @@
-[00:00:02.472] Server  LOG     ✓ Ready in 1822ms
-[00:00:10.789] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:33.555] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:53.154] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:53.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:54.071] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:27.792] Server  LOG     ✓ Compiled in 1656ms
-[00:06:39.234] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:58.018] Browser LOG     Sending donation FormData:
-[00:06:58.018] Browser LOG     type: donation
-[00:06:58.018] Browser LOG     amount: 450
-[00:06:58.019] Browser LOG     note: 
-[00:06:58.019] Browser LOG     donorName: hh
-[00:06:58.019] Browser LOG     donorPhone: 
-[00:06:58.019] Browser LOG     donorAddress: 
-[00:06:58.019] Browser LOG     receiverName: gg
-[00:06:58.019] Browser LOG     receiverPhone: 
-[00:06:58.019] Browser LOG     receiverAddress: 
-[00:07:22.417] Browser ERROR   Donation error: {}
-[00:08:08.369] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:34.957] Browser LOG     Sending donation FormData:
-[00:08:34.957] Browser LOG     type: donation
-[00:08:34.957] Browser LOG     amount: 1234
-[00:08:34.957] Browser LOG     note: 
-[00:08:34.957] Browser LOG     donorName: g
-[00:08:34.957] Browser LOG     donorPhone: 
-[00:08:34.957] Browser LOG     donorAddress: 
-[00:08:34.957] Browser LOG     receiverName: f
-[00:08:34.957] Browser LOG     receiverPhone: 
-[00:08:34.957] Browser LOG     receiverAddress: 
-[00:08:41.659] Browser ERROR   Donation error: {}
-[00:12:15.862] Browser LOG     Sending donation FormData:
-[00:12:15.862] Browser LOG     type: donation
-[00:12:15.862] Browser LOG     amount: 1234
-[00:12:15.862] Browser LOG     note: 
-[00:12:15.862] Browser LOG     donorName: g
-[00:12:15.862] Browser LOG     donorPhone: 
-[00:12:15.862] Browser LOG     donorAddress: 
-[00:12:15.862] Browser LOG     receiverName: f
-[00:12:15.862] Browser LOG     receiverPhone: 
-[00:12:15.862] Browser LOG     receiverAddress: 
-[00:12:20.086] Browser ERROR   Donation error: {}
-[00:12:23.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:52.790] Browser LOG     Sending donation FormData:
-[00:12:52.790] Browser LOG     type: donation
-[00:12:52.790] Browser LOG     amount: 123
-[00:12:52.790] Browser LOG     note: cdxvf
-[00:12:52.790] Browser LOG     donorName: s
-[00:12:52.790] Browser LOG     donorPhone: 2222
-[00:12:52.790] Browser LOG     donorAddress: dsff
-[00:12:52.790] Browser LOG     receiverName: f
-[00:12:52.790] Browser LOG     receiverPhone: 33
-[00:12:52.790] Browser LOG     receiverAddress: vdfsv
-[00:12:57.112] Browser ERROR   Donation error: {}
-[00:13:46.705] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:14:06.137] Browser LOG     Sending donation FormData:
-[00:14:06.137] Browser LOG     type: donation
-[00:14:06.137] Browser LOG     amount: 123
-[00:14:06.137] Browser LOG     note: ghn
-[00:14:06.137] Browser LOG     donorName: ghd
-[00:14:06.137] Browser LOG     donorPhone: 45w
-[00:14:06.137] Browser LOG     donorAddress: dn
-[00:14:06.137] Browser LOG     receiverName: nghf
-[00:14:06.137] Browser LOG     receiverPhone: 56gh
-[00:14:06.137] Browser LOG     receiverAddress: ghn
-[00:14:12.642] Browser ERROR   Donation error: {}
-[00:18:59.822] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:19.652] Browser LOG     Sending donation FormData:
-[00:19:19.652] Browser LOG     type: donation
-[00:19:19.652] Browser LOG     amount: 333
-[00:19:19.652] Browser LOG     note: gk
-[00:19:19.652] Browser LOG     donorName: gggggg
-[00:19:19.652] Browser LOG     donorPhone: 467
-[00:19:19.652] Browser LOG     donorAddress: hj
-[00:19:19.652] Browser LOG     receiverName: jjj
-[00:19:19.652] Browser LOG     receiverPhone: ti
-[00:19:19.652] Browser LOG     receiverAddress: kjg
-[00:19:26.228] Browser ERROR   Donation error: {}
-[00:25:14.036] Browser LOG     Sending donation FormData:
-[00:25:14.036] Browser LOG     type: donation
-[00:25:14.036] Browser LOG     amount: 333
-[00:25:14.036] Browser LOG     note: gk
-[00:25:14.036] Browser LOG     donorName: gggggg
-[00:25:14.036] Browser LOG     donorPhone: 467
-[00:25:14.036] Browser LOG     donorAddress: hj
-[00:25:14.036] Browser LOG     receiverName: jjj
-[00:25:14.036] Browser LOG     receiverPhone: ti
-[00:25:14.036] Browser LOG     receiverAddress: kjg
-[00:25:19.088] Browser LOG     Backend response: {"insertedId":"69bd9185721d4d4f6734f309","message":"Transaction added successfully","success":true}
-[00:47:56.958] Server  LOG     ✓ Compiled in 475ms
-[00:48:07.015] Server  LOG     ✓ Compiled in 329ms
-[00:48:10.583] Server  LOG     ✓ Compiled in 159ms
-[00:48:12.539] Server  LOG     ✓ Compiled in 107ms
-[00:48:16.696] Server  LOG     ✓ Compiled in 110ms
-[00:48:26.152] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:34.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:48:44.410] Browser LOG     Sending donation FormData:
-[00:48:44.410] Browser LOG     type: donation
-[00:48:44.410] Browser LOG     amount: 333
-[00:48:44.410] Browser LOG     note: 
-[00:48:44.410] Browser LOG     donorName: hh
-[00:48:44.410] Browser LOG     donorPhone: 
-[00:48:44.410] Browser LOG     donorAddress: 
-[00:48:44.410] Browser LOG     receiverName: hh
-[00:48:44.410] Browser LOG     receiverPhone: 
-[00:48:44.410] Browser LOG     receiverAddress: 
-[00:48:47.180] Server  WARN    Error: Failed to find Server Action. This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[00:48:58.689] Browser LOG     Backend response: {}
-[00:48:58.689] Browser ERROR   Donation error: {}
-[00:49:23.857] Server  LOG     ✓ Compiled in 1042ms
-[00:49:24.702] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/dashboard/page.jsx:90:13
-Ecmascript file had an error
-  88 |       });
-  89 |
-> 90 |       const res = await fetch(`/api/hishab`, {
-     |             ^^^
-  91 |         method: 'POST',
-  92 |         body: formData,
-  93 |       });
-
-the name `res` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/dashboard/page.jsx [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/dashboard/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/dashboard/page.jsx [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/dashboard/page.jsx [Server Component]
-[00:51:34.340] Server  LOG     ✓ Compiled in 665ms
-[00:51:35.780] Server  LOG     ✓ Compiled in 355ms
-[00:51:46.842] Server  WARN    Error: Failed to find Server Action. This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[00:51:46.854] Browser LOG     Sending donation FormData:
-[00:51:46.854] Browser LOG     type: donation
-[00:51:46.854] Browser LOG     amount: 333
-[00:51:46.854] Browser LOG     note: 
-[00:51:46.854] Browser LOG     donorName: hh
-[00:51:46.854] Browser LOG     donorPhone: 
-[00:51:46.854] Browser LOG     donorAddress: 
-[00:51:46.854] Browser LOG     receiverName: hh
-[00:51:46.854] Browser LOG     receiverPhone: 
-[00:51:46.854] Browser LOG     receiverAddress: 
-[00:51:46.980] Browser WARN    Vercel API failed, trying backend... {}
-[00:51:49.441] Browser LOG     Backend response: {"insertedId":"69bd97bd721d4d4f6734f30a","message":"Transaction added successfully","success":true}
-[00:52:05.768] Server  WARN    Error: Failed to find Server Action. This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[00:52:05.772] Browser LOG     Sending donation FormData:
-[00:52:05.772] Browser LOG     type: donation
-[00:52:05.772] Browser LOG     amount: 34
-[00:52:05.772] Browser LOG     note: 
-[00:52:05.772] Browser LOG     donorName: gdf
-[00:52:05.772] Browser LOG     donorPhone: 
-[00:52:05.772] Browser LOG     donorAddress: 
-[00:52:05.772] Browser LOG     receiverName: gdf
-[00:52:05.772] Browser LOG     receiverPhone: 
-[00:52:05.772] Browser LOG     receiverAddress: 
-[00:52:05.902] Browser WARN    Vercel API failed, trying backend... {}
-[00:52:07.858] Browser LOG     Backend response: {"insertedId":"69bd97d0721d4d4f6734f30b","message":"Transaction added successfully","success":true}
-[00:52:42.700] Server  WARN    Error: Failed to find Server Action. This request might be from an older or newer deployment.
-Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
-[00:52:42.703] Browser LOG     Sending donation FormData:
-[00:52:42.703] Browser LOG     type: donation
-[00:52:42.703] Browser LOG     amount: 232
-[00:52:42.703] Browser LOG     note: 
-[00:52:42.703] Browser LOG     donorName: gre
-[00:52:42.703] Browser LOG     donorPhone: 
-[00:52:42.703] Browser LOG     donorAddress: 
-[00:52:42.703] Browser LOG     receiverName: gdrfgre
-[00:52:42.703] Browser LOG     receiverPhone: 
-[00:52:42.703] Browser LOG     receiverAddress: 
-[00:52:42.831] Browser WARN    Vercel API failed, trying backend... {}
+[00:00:11.152] Server  LOG     ✓ Ready in 10.5s
+[00:00:14.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.498] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.889] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:23.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:42.638] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:35.189] Server  LOG       Reload env: .env.local
+[00:01:35.461] Server  LOG     ✓ Compiled in 125ms
+[00:01:37.194] Browser ERROR   Fetch error: {}
+[00:01:37.386] Server  LOG       Reload env: .env.local
+[00:01:37.615] Server  LOG     ✓ Compiled in 56ms
+[00:01:41.706] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:43.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:44.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:45.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:47.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:20.989] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:31.967] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:39.994] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

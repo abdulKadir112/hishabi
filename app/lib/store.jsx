@@ -6,7 +6,7 @@ import { persist } from 'zustand/middleware';
 const API_BASE = process.env.NEXT_PUBLIC_API_URL 
   || (process.env.NODE_ENV === 'development' 
       ? 'http://localhost:5000' 
-      : 'https://hishabi-api.vercel.app');
+      : 'https://hishabiapi.onrender.com');
 
 export const useStore = create(
   persist(

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useStore } from '../lib/store';
 
 const API_BASE = process.env.NODE_ENV === 'production'
-  ? 'https://hishabi-api.vercel.app'
+  ? 'https://hishabiapi.onrender.com'
   : 'http://localhost:5000';
 
 export default function Dashboard() {
@@ -63,11 +63,10 @@ export default function Dashboard() {
     }
 
     setLoading(true);
-
     try {
       const formData = new FormData();
       formData.append('type', 'donation');
-      formData.append('amount', donation.amount.toString()); // string হিসেবে পাঠানো
+      formData.append('amount', donation.amount);
       formData.append('note', donation.reason.trim() || '');
       formData.append('donorName', donation.donorName.trim());
       formData.append('donorPhone', donation.donorPhone.trim() || '');
@@ -76,55 +75,10 @@ export default function Dashboard() {
       formData.append('receiverPhone', donation.receiverPhone.trim() || '');
       formData.append('receiverAddress', donation.receiverAddress.trim() || '');
 
-      // Debug: কী পাঠানো হচ্ছে দেখার জন্য
-      console.log('Sending donation FormData:');
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
-
-      // const res = await fetch(`${API_BASE}/hishab`, {
-      //   method: 'POST',
-      //   body: formData,
-      // });
-
-      // const res = await fetch(`/api/hishab`, {
-      //   method: 'POST',
-      //   body: formData,
-      // });
-
-      let res;
-
-try {
-  // প্রথমে Vercel API try করবে
-  res = await fetch(`/api/hishab`, {
-    method: 'POST',
-    body: formData,
-  });
-
-  if (!res.ok) throw new Error('Vercel API failed');
-
-} catch (err) {
-  console.warn('Vercel API failed, trying backend...', err);
-
-  // fallback → external backend
-  res = await fetch(`${API_BASE}/hishab`, {
-    method: 'POST',
-    body: formData,
-  });
-}
-
-
-      let result;
-      try {
-        result = await res.json();
-      } catch {
-        result = {};
-      }
-
-      console.log('Backend response:', result);
-
-      if (!res.ok || !result.success) {
-        throw new Error(result.error || result.message || 'দান যোগ করতে ব্যর্থ');
+      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
+      if (!res.ok) {
+        const err = await res.text();
+        throw new Error(err || 'দান যোগ করতে ব্যর্থ');
       }
 
       alert('দান সফলভাবে যোগ হয়েছে!');
@@ -135,8 +89,7 @@ try {
       });
       fetchData();
     } catch (err) {
-      console.error('Donation error:', err);
-      alert('দান যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
+      alert('দান যোগ করতে ব্যর্থ: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -152,38 +105,19 @@ try {
     }
 
     setLoading(true);
-
     try {
       const formData = new FormData();
       formData.append('type', 'expense');
-      formData.append('amount', expense.amount.toString()); // string হিসেবে
+      formData.append('amount', expense.amount);
       formData.append('note', expense.reason.trim() || '');
       formData.append('receiverName', expense.receiverName.trim());
       formData.append('receiverPhone', expense.receiverPhone.trim() || '');
       formData.append('receiverAddress', expense.receiverAddress.trim() || '');
 
-      // Debug
-      console.log('Sending expense FormData:');
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
-
-      const res = await fetch(`${API_BASE}/hishab`, {
-        method: 'POST',
-        body: formData,
-      });
-
-      let result;
-      try {
-        result = await res.json();
-      } catch {
-        result = {};
-      }
-
-      console.log('Backend response:', result);
-
-      if (!res.ok || !result.success) {
-        throw new Error(result.error || result.message || 'খরচ যোগ করতে ব্যর্থ');
+      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
+      if (!res.ok) {
+        const err = await res.text();
+        throw new Error(err || 'খরচ যোগ করতে ব্যর্থ');
       }
 
       alert('খরচ সফলভাবে রেকর্ড হয়েছে!');
@@ -193,8 +127,7 @@ try {
       });
       fetchData();
     } catch (err) {
-      console.error('Expense error:', err);
-      alert('খরচ যোগ করতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা হয়েছে'));
+      alert('খরচ যোগ করতে ব্যর্থ: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -207,7 +140,7 @@ try {
       await deleteTransaction(id);
       alert('লেনদেন মুছে ফেলা হয়েছে');
     } catch (err) {
-      alert('মুছে ফেলতে ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
+      alert('মুছে ফেলতে ব্যর্থ: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -223,7 +156,7 @@ try {
     try {
       const formData = new FormData();
       formData.append('type', editingTx.type);
-      formData.append('amount', (editingTx.amount || 0).toString());
+      formData.append('amount', editingTx.amount);
       formData.append('note', editingTx.note || editingTx.reason || '');
 
       if (editingTx.type === 'donation') {
@@ -244,7 +177,7 @@ try {
       setEditingTx(null);
       fetchData();
     } catch (err) {
-      alert('আপডেট ব্যর্থ: ' + (err.message || 'সার্ভারে সমস্যা'));
+      alert('আপডেট ব্যর্থ: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -366,7 +299,7 @@ try {
             </div>
           </div>
 
-          {/* খরচ ফর্ম – ডিজাইন একদম আগের মতো */}
+          {/* খরচ ফর্ম */}
           <div className="bg-white p-8 rounded-3xl shadow-2xl border border-red-100">
             <h2 className="text-3xl font-bold mb-8 text-red-800 flex items-center gap-3">
               <ArrowDown size={32} className="text-red-600" /> নতুন খরচ রেকর্ড
@@ -423,7 +356,7 @@ try {
           </div>
         </div>
 
-        {/* সকল লেনদেন সেকশন – একদম আগের মতো */}
+        {/* সকল লেনদেন সেকশন – ডিজাইন ম্যাচ করা */}
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden mb-12">
           <div className="p-8 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
             <h2 className="text-3xl font-extrabold text-gray-800 flex items-center gap-3">
@@ -449,6 +382,7 @@ try {
                     className="p-6 hover:bg-gray-50/80 transition-colors duration-150"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                      {/* Left - Info */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-3 mb-2">
                           <div
@@ -483,6 +417,7 @@ try {
                         )}
                       </div>
 
+                      {/* Right - Amount + Actions */}
                       <div className="flex items-center gap-6 sm:gap-8">
                         <p
                           className={`font-bold text-2xl whitespace-nowrap ${
@@ -517,7 +452,7 @@ try {
           )}
         </div>
 
-        {/* Edit Modal – একদম আগের মতো */}
+        {/* Edit Modal – আগের মতোই রাখা হয়েছে */}
         {editingTx && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
             <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto">
