@@ -1,11 +1,10 @@
 'use client';
 
-import { useStore } from '../app/lib/store'; // path ঠিক আছে
+import { useStore } from '../app/lib/store.jsx'; // path ঠিক করো
 import { useEffect } from 'react';
 import { format } from 'date-fns';
 import { bn } from 'date-fns/locale/bn';
 import { ArrowUp, ArrowDown, Gift, Users } from 'lucide-react';
-import Image from 'next/image';
 
 export default function Home() {
   const {
@@ -15,7 +14,6 @@ export default function Home() {
     members,
     transactions,
     fetchData,
-    // isLoading,
   } = useStore();
 
   useEffect(() => {
@@ -32,13 +30,15 @@ export default function Home() {
     .sort((a, b) => (b.totalDonated || 0) - (a.totalDonated || 0))
     .slice(0, 4);
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-  //       <p className="text-2xl text-gray-700 animate-pulse">লোড হচ্ছে...</p>
-  //     </div>
-  //   );
-  // }
+  // Initial avatar function
+  const getInitialAvatar = (name = '', bgColor = 'bg-gray-300', textColor = 'text-gray-700') => {
+    const initial = name.trim()?.[0]?.toUpperCase() || '?';
+    return (
+      <div className={`w-12 h-12 rounded-full ${bgColor} flex items-center justify-center text-xl font-bold ${textColor} flex-shrink-0`}>
+        {initial}
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -90,20 +90,7 @@ export default function Home() {
                   <div className="flex items-center gap-4 w-full sm:w-auto">
                     {isDonation ? (
                       <>
-                        {t.donorImage || t.donorAvatar ? (
-                          <div className="relative w-12 h-12 flex-shrink-0">
-                            <Image
-                              src={t.donorImage || t.donorAvatar}
-                              alt={t.donorName || 'দানকারী'}
-                              fill
-                              className="rounded-full object-cover border-2 border-gray-300"
-                            />
-                          </div>
-                        ) : (
-                          <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xl">
-                            {t.donorName?.[0]?.toUpperCase() || '?'}
-                          </div>
-                        )}
+                        {getInitialAvatar(t.donorName, 'bg-indigo-200', 'text-indigo-800')}
 
                         <div>
                           <p className="font-semibold text-lg">
@@ -120,20 +107,7 @@ export default function Home() {
                       </>
                     ) : (
                       <>
-                        {t.receiverImage || t.receiverAvatar ? (
-                          <div className="relative w-12 h-12 flex-shrink-0">
-                            <Image
-                              src={t.receiverImage || t.receiverAvatar}
-                              alt={t.receiverName || 'গ্রহীতা'}
-                              fill
-                              className="rounded-full object-cover border-2 border-gray-300"
-                            />
-                          </div>
-                        ) : (
-                          <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xl">
-                            {t.receiverName?.[0]?.toUpperCase() || '?'}
-                          </div>
-                        )}
+                        {getInitialAvatar(t.receiverName, 'bg-red-200', 'text-red-800')}
 
                         <div>
                           <p className="font-semibold text-lg text-red-700">
@@ -179,22 +153,9 @@ export default function Home() {
                 className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-xl transition border border-gray-100"
               >
                 <div className="flex flex-col items-center text-center">
-                  {m.avatar ? (
-                    <div className="relative w-20 h-20 mb-4">
-                      <Image
-                        src={m.avatar}
-                        alt={m.name}
-                        fill
-                        className="rounded-full object-cover border-4 border-emerald-300 shadow-md"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-3xl mb-4">
-                      {m.name?.[0]?.toUpperCase() || '?'}
-                    </div>
-                  )}
+                  {getInitialAvatar(m.name, 'bg-emerald-200', 'text-emerald-800')}
 
-                  <h3 className="text-xl font-bold text-gray-800">{m.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mt-4">{m.name}</h3>
                   <p className="text-emerald-600 font-semibold mt-2 text-lg">
                     ৳ {(m.totalDonated || 0).toLocaleString('bn-BD')}
                   </p>

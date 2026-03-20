@@ -732,7 +732,7 @@ const persistImpl = (config, baseOptions)=>(set, get, api)=>{
                 if (currentVersion !== hydrationVersion) {
                     return;
                 }
-                postRehydrationCallback == null ? void 0 : postRehydrationCallback(stateFromStorage, void 0);
+                postRehydrationCallback == null ? void 0 : postRehydrationCallback(get(), void 0);
                 stateFromStorage = get();
                 hasHydrated = true;
                 finishHydrationListeners.forEach((cb)=>cb(stateFromStorage));
@@ -3713,6 +3713,12 @@ const configEnv = ("TURBOPACK compile-time value", {
             "hostname": ("TURBOPACK compile-time value", "i.pravatar.cc"),
             "port": ("TURBOPACK compile-time value", ""),
             "pathname": ("TURBOPACK compile-time value", "/**")
+        }),
+        ("TURBOPACK compile-time value", {
+            "protocol": ("TURBOPACK compile-time value", "https"),
+            "hostname": ("TURBOPACK compile-time value", "via.placeholder.com"),
+            "port": ("TURBOPACK compile-time value", ""),
+            "pathname": ("TURBOPACK compile-time value", "/**")
         })
     ]),
     "localPatterns": ("TURBOPACK compile-time value", [
@@ -4073,6 +4079,12 @@ function getImageProps(imgProps) {
                 ("TURBOPACK compile-time value", {
                     "protocol": ("TURBOPACK compile-time value", "https"),
                     "hostname": ("TURBOPACK compile-time value", "i.pravatar.cc"),
+                    "port": ("TURBOPACK compile-time value", ""),
+                    "pathname": ("TURBOPACK compile-time value", "/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "https"),
+                    "hostname": ("TURBOPACK compile-time value", "via.placeholder.com"),
                     "port": ("TURBOPACK compile-time value", ""),
                     "pathname": ("TURBOPACK compile-time value", "/**")
                 })

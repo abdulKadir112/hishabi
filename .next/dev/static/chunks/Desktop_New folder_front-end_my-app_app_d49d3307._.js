@@ -6,33 +6,29 @@ __turbopack_context__.s([
     "useStore",
     ()=>useStore
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/zustand/esm/react.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/zustand/esm/middleware.mjs [app-client] (ecmascript)");
 'use client';
 ;
 ;
-const API_BASE = 'http://localhost:5000';
+const API_BASE = ("TURBOPACK compile-time value", "https://hishabi-api.vercel.app") || (("TURBOPACK compile-time truthy", 1) ? 'http://localhost:5000' : "TURBOPACK unreachable");
 const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["create"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["persist"])((set, get)=>({
-        members: [],
         transactions: [],
+        members: [],
         totalDonation: 0,
         totalExpense: 0,
         netBalance: 0,
         isLoading: false,
         fetchData: async ()=>{
+            set({
+                isLoading: true
+            });
             try {
-                set({
-                    isLoading: true
-                });
                 const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) {
-                    const errText = await res.text();
-                    throw new Error(`HTTP ${res.status} - ${errText}`);
-                }
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
-                console.log('API Response:', data);
                 const transactions = Array.isArray(data.transactions) ? data.transactions : [];
-                // totals নেওয়া – backend থেকে না আসলে নিজে হিসাব করা
                 let totalDonation = Number(data.totalDonation) || 0;
                 let totalExpense = Number(data.totalExpense) || 0;
                 let netBalance = Number(data.netBalance) || 0;
@@ -40,13 +36,8 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                     totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     netBalance = totalDonation - totalExpense;
-                    console.log('Fallback totals calculated:', {
-                        totalDonation,
-                        totalExpense,
-                        netBalance
-                    });
                 }
-                // শীর্ষ দানকারীদের জন্য members তৈরি করা
+                // Derive members from transactions
                 const memberMap = new Map();
                 transactions.forEach((tx)=>{
                     if (tx.type === 'donation' && tx.donorName?.trim()) {
@@ -58,41 +49,34 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                                 name,
                                 phone: tx.donorPhone || '',
                                 address: tx.donorAddress || '',
-                                avatar: tx.donorImage || tx.donorAvatar || '',
-                                totalDonated: 0,
-                                totalReceived: 0
+                                totalDonated: 0
                             });
                         }
                         memberMap.get(key).totalDonated += Number(tx.amount) || 0;
                     }
                 });
-                const derivedMembers = Array.from(memberMap.values());
-                console.log('Derived members for top donors:', derivedMembers);
                 set({
                     transactions,
-                    members: derivedMembers,
+                    members: Array.from(memberMap.values()),
                     totalDonation,
                     totalExpense,
                     netBalance,
                     isLoading: false
                 });
             } catch (err) {
-                console.error('Fetch error:', err.message || err);
+                console.error('Fetch error:', err);
                 set({
                     isLoading: false
                 });
             }
         },
-        addTransaction: async (tx)=>{
+        addTransaction: async (formData)=>{
             try {
                 const res = await fetch(`${API_BASE}/hishab`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(tx)
+                    body: formData
                 });
-                if (!res.ok) throw new Error('Failed to add');
+                if (!res.ok) throw new Error('Add failed');
                 await get().fetchData();
                 return true;
             } catch (err) {
@@ -102,36 +86,43 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
         },
         deleteTransaction: async (id)=>{
             try {
-                await fetch(`${API_BASE}/hishab/${id}`, {
+                const res = await fetch(`${API_BASE}/hishab/${id}`, {
                     method: 'DELETE'
                 });
+                if (!res.ok) throw new Error('Delete failed');
                 await get().fetchData();
             } catch (err) {
                 console.error('Delete error:', err);
             }
         },
-        addMember: (data)=>set((state)=>({
-                    members: [
-                        ...state.members,
-                        {
-                            id: Date.now().toString(),
-                            name: data.name.trim(),
-                            phone: data.phone || '',
-                            address: data.address || '',
-                            avatar: data.avatar || '',
-                            totalDonated: 0,
-                            totalReceived: 0
-                        }
-                    ]
-                })),
-        updateMember: (id, updates)=>set((state)=>({
-                    members: state.members.map((m)=>m.id === id ? {
-                            ...m,
-                            ...updates
-                        } : m)
-                }))
+        // Edit: backend-এ PATCH না থাকলে delete + add করে simulate
+        editTransaction: async (id, updatedFormData)=>{
+            try {
+                // প্রথমে delete
+                await fetch(`${API_BASE}/hishab/${id}`, {
+                    method: 'DELETE'
+                });
+                // তারপর নতুন add
+                const res = await fetch(`${API_BASE}/hishab`, {
+                    method: 'POST',
+                    body: updatedFormData
+                });
+                if (!res.ok) throw new Error('Edit failed');
+                await get().fetchData();
+                return true;
+            } catch (err) {
+                console.error('Edit error:', err);
+                return false;
+            }
+        }
     }), {
-    name: 'group-fund-final-v5'
+    name: 'group-fund-final-v6',
+    partialize: (state)=>({
+            members: state.members,
+            totalDonation: state.totalDonation,
+            totalExpense: state.totalExpense,
+            netBalance: state.netBalance
+        })
 }));
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -159,16 +150,16 @@ function ProfileCard({ member }) {
     const received = transactions?.filter((t)=>t.type === 'donation' && t.receiverName === member.name).reduce((sum, t)=>sum + (Number(t.amount) || 0), 0) || member.totalReceived || 0;
     const avatarFallback = `https://i.pravatar.cc/200?u=${encodeURIComponent(member.name || 'user')}`;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white rounded-3xl shadow-xl p-8 text-center hover:shadow-2xl transition transform hover:-translate-y-2 duration-300 border border-gray-100",
+        className: "bg-white rounded-3xl shadow-xl p-6 md:p-8 text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-40 h-40 mx-auto mb-6",
+                className: "relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     src: member.avatar || avatarFallback,
                     alt: member.name || 'সদস্য',
                     fill: true,
                     className: "rounded-full object-cover border-4 border-indigo-400 shadow-lg",
-                    sizes: "(max-width: 768px) 140px, 160px",
+                    sizes: "(max-width: 768px) 128px, 160px",
                     onError: (e)=>{
                         e.target.src = avatarFallback;
                     }
@@ -183,7 +174,7 @@ function ProfileCard({ member }) {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                className: "text-2xl font-bold text-gray-900 mb-3",
+                className: "text-xl md:text-2xl font-bold text-gray-900 mb-4",
                 children: member.name || 'নামহীন'
             }, void 0, false, {
                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
@@ -194,9 +185,10 @@ function ProfileCard({ member }) {
                 className: "grid grid-cols-2 gap-6 mb-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-emerald-50/60 p-4 rounded-2xl border border-emerald-100",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-3xl font-bold text-emerald-600",
+                                className: "text-2xl md:text-3xl font-bold text-emerald-600",
                                 children: [
                                     "৳ ",
                                     contributed.toLocaleString('bn-BD')
@@ -207,7 +199,7 @@ function ProfileCard({ member }) {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-gray-600 mt-1",
+                                className: "text-sm text-gray-600 mt-1 font-medium",
                                 children: "দান করেছেন"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
@@ -221,9 +213,10 @@ function ProfileCard({ member }) {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "bg-blue-50/60 p-4 rounded-2xl border border-blue-100",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-3xl font-bold text-blue-600",
+                                className: "text-2xl md:text-3xl font-bold text-blue-600",
                                 children: [
                                     "৳ ",
                                     received.toLocaleString('bn-BD')
@@ -234,7 +227,7 @@ function ProfileCard({ member }) {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-gray-600 mt-1",
+                                className: "text-sm text-gray-600 mt-1 font-medium",
                                 children: "পেয়েছেন"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
@@ -254,27 +247,45 @@ function ProfileCard({ member }) {
                 columnNumber: 7
             }, this),
             (member.phone || member.address) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-sm text-gray-600 space-y-1",
+                className: "text-sm md:text-base text-gray-600 space-y-2 mt-4",
                 children: [
                     member.phone && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "flex items-center justify-center gap-2",
                         children: [
-                            "☎ ",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-emerald-600",
+                                children: "☎"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
+                                lineNumber: 57,
+                                columnNumber: 15
+                            }, this),
+                            " ",
                             member.phone
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
-                        lineNumber: 55,
-                        columnNumber: 28
+                        lineNumber: 56,
+                        columnNumber: 13
                     }, this),
                     member.address && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "flex items-center justify-center gap-2",
                         children: [
-                            "📍 ",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-blue-600",
+                                children: "📍"
+                            }, void 0, false, {
+                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
+                                lineNumber: 62,
+                                columnNumber: 15
+                            }, this),
+                            " ",
                             member.address
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/components/ProfileCard.jsx",
-                        lineNumber: 56,
-                        columnNumber: 30
+                        lineNumber: 61,
+                        columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {

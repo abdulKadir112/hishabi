@@ -8,7 +8,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 (()=>{
-    const e = new Error("Cannot find module '../lib/store'");
+    const e = new Error("Cannot find module '../app/lib/'");
     e.code = 'MODULE_NOT_FOUND';
     throw e;
 })();
@@ -19,7 +19,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$fr
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/lucide-react/dist/esm/icons/arrow-down.js [app-client] (ecmascript) <export default as ArrowDown>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$gift$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Gift$3e$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/lucide-react/dist/esm/icons/gift.js [app-client] (ecmascript) <export default as Gift>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/New folder/front-end/my-app/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
@@ -28,10 +27,9 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
 function Home() {
     _s();
-    const { netBalance, totalDonation, totalExpense, members, transactions, fetchData, isLoading } = useStore();
+    const { netBalance, totalDonation, totalExpense, members, transactions, fetchData } = useStore();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Home.useEffect": ()=>{
             fetchData();
@@ -44,23 +42,18 @@ function Home() {
         ...safeTransactions
     ].sort((a, b)=>new Date(b.date || b.createdAt || 0) - new Date(a.date || a.createdAt || 0)).slice(0, 5);
     const topDonors = members.filter((m)=>(m.totalDonated || 0) > 0).sort((a, b)=>(b.totalDonated || 0) - (a.totalDonated || 0)).slice(0, 4);
-    if (isLoading) {
+    // Initial avatar function
+    const getInitialAvatar = (name = '', bgColor = 'bg-gray-300', textColor = 'text-gray-700')=>{
+        const initial = name.trim()?.[0]?.toUpperCase() || '?';
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "min-h-screen bg-gray-50 flex items-center justify-center",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-2xl text-gray-700 animate-pulse",
-                children: "লোড হচ্ছে..."
-            }, void 0, false, {
-                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                lineNumber: 38,
-                columnNumber: 9
-            }, this)
+            className: `w-12 h-12 rounded-full ${bgColor} flex items-center justify-center text-xl font-bold ${textColor} flex-shrink-0`,
+            children: initial
         }, void 0, false, {
             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
             lineNumber: 37,
             columnNumber: 7
         }, this);
-    }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-gray-50",
         children: [
@@ -184,62 +177,12 @@ function Home() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-8 text-center text-sm",
-                        children: [
-                            "Debug Info:",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 71,
-                                columnNumber: 22
-                            }, this),
-                            "মোট দান = ",
-                            totalDonation.toLocaleString('bn-BD'),
-                            " টাকা",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 72,
-                                columnNumber: 65
-                            }, this),
-                            "মোট খরচ = ",
-                            totalExpense.toLocaleString('bn-BD'),
-                            " টাকা",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 73,
-                                columnNumber: 64
-                            }, this),
-                            "নেট ব্যালেন্স = ",
-                            netBalance.toLocaleString('bn-BD'),
-                            " টাকা",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 74,
-                                columnNumber: 68
-                            }, this),
-                            "মোট লেনদেন = ",
-                            safeTransactions.length,
-                            " টি",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 75,
-                                columnNumber: 52
-                            }, this),
-                            "মোট সদস্য (derived) = ",
-                            members.length,
-                            " জন"
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 70,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUp$3e$__["ArrowUp"], {}, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                    lineNumber: 81,
+                                    lineNumber: 71,
                                     columnNumber: 27
                                 }, void 0),
                                 title: "মোট দান",
@@ -247,13 +190,13 @@ function Home() {
                                 color: "emerald"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 81,
+                                lineNumber: 71,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__["ArrowDown"], {}, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                    lineNumber: 82,
+                                    lineNumber: 72,
                                     columnNumber: 27
                                 }, void 0),
                                 title: "মোট খরচ",
@@ -261,13 +204,13 @@ function Home() {
                                 color: "red"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 82,
+                                lineNumber: 72,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$gift$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Gift$3e$__["Gift"], {}, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                    lineNumber: 83,
+                                    lineNumber: 73,
                                     columnNumber: 27
                                 }, void 0),
                                 title: "মোট লেনদেন",
@@ -275,13 +218,13 @@ function Home() {
                                 color: "purple"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 83,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
                                 icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"], {}, void 0, false, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                    lineNumber: 84,
+                                    lineNumber: 74,
                                     columnNumber: 27
                                 }, void 0),
                                 title: "মোট সদস্য",
@@ -289,13 +232,13 @@ function Home() {
                                 color: "blue"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 84,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 80,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -303,7 +246,7 @@ function Home() {
                         children: "সাম্প্রতিক লেনদেন"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 88,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -313,7 +256,7 @@ function Home() {
                             children: "কোনো লেনদেন হয়নি এখনো"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                            lineNumber: 91,
+                            lineNumber: 81,
                             columnNumber: 13
                         }, this) : recent.map((t)=>{
                             const isDonation = t.type === 'donation';
@@ -324,30 +267,7 @@ function Home() {
                                         className: "flex items-center gap-4 w-full sm:w-auto",
                                         children: isDonation ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
-                                                t.donorImage || t.donorAvatar ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-12 h-12 flex-shrink-0",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: t.donorImage || t.donorAvatar,
-                                                        alt: t.donorName || 'দানকারী',
-                                                        fill: true,
-                                                        className: "rounded-full object-cover border-2 border-gray-300"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                        lineNumber: 105,
-                                                        columnNumber: 29
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 104,
-                                                    columnNumber: 27
-                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xl",
-                                                    children: t.donorName?.[0]?.toUpperCase() || '?'
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 113,
-                                                    columnNumber: 27
-                                                }, this),
+                                                getInitialAvatar(t.donorName, 'bg-indigo-200', 'text-indigo-800'),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -358,7 +278,7 @@ function Home() {
                                                                     children: t.donorName || 'অজ্ঞাত'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                                    lineNumber: 120,
+                                                                    lineNumber: 97,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -366,7 +286,7 @@ function Home() {
                                                                     children: "→"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                                    lineNumber: 121,
+                                                                    lineNumber: 98,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -374,13 +294,13 @@ function Home() {
                                                                     children: t.receiverName || 'অজ্ঞাত'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                                    lineNumber: 122,
+                                                                    lineNumber: 99,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                            lineNumber: 119,
+                                                            lineNumber: 96,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -390,42 +310,19 @@ function Home() {
                                                             }) : 'তারিখ নেই'
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                            lineNumber: 124,
+                                                            lineNumber: 101,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 118,
+                                                    lineNumber: 95,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                             children: [
-                                                t.receiverImage || t.receiverAvatar ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-12 h-12 flex-shrink-0",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: t.receiverImage || t.receiverAvatar,
-                                                        alt: t.receiverName || 'গ্রহীতা',
-                                                        fill: true,
-                                                        className: "rounded-full object-cover border-2 border-gray-300"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                        lineNumber: 135,
-                                                        columnNumber: 29
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 134,
-                                                    columnNumber: 27
-                                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-xl",
-                                                    children: t.receiverName?.[0]?.toUpperCase() || '?'
-                                                }, void 0, false, {
-                                                    fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 143,
-                                                    columnNumber: 27
-                                                }, this),
+                                                getInitialAvatar(t.receiverName, 'bg-red-200', 'text-red-800'),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -436,7 +333,7 @@ function Home() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                            lineNumber: 149,
+                                                            lineNumber: 113,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -446,7 +343,7 @@ function Home() {
                                                             }) : 'তারিখ নেই'
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                            lineNumber: 152,
+                                                            lineNumber: 116,
                                                             columnNumber: 27
                                                         }, this),
                                                         t.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -454,20 +351,20 @@ function Home() {
                                                             children: t.note
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                            lineNumber: 158,
+                                                            lineNumber: 122,
                                                             columnNumber: 29
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                    lineNumber: 148,
+                                                    lineNumber: 112,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true)
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                        lineNumber: 100,
+                                        lineNumber: 90,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -479,19 +376,19 @@ function Home() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                        lineNumber: 165,
+                                        lineNumber: 129,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, t._id || t.id || Math.random(), true, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 96,
+                                lineNumber: 86,
                                 columnNumber: 17
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 89,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -499,7 +396,7 @@ function Home() {
                         children: "শীর্ষ দানকারী"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 179,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,43 +406,20 @@ function Home() {
                             children: "এখনো কোনো দানকারী নেই। ড্যাশবোর্ডে গিয়ে দান রেকর্ড করুন।"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                            lineNumber: 182,
+                            lineNumber: 146,
                             columnNumber: 13
                         }, this) : topDonors.map((m)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "bg-white rounded-3xl shadow-lg p-6 hover:shadow-xl transition border border-gray-100",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex flex-col items-center text-center",
                                     children: [
-                                        m.avatar ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative w-20 h-20 mb-4",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                src: m.avatar,
-                                                alt: m.name,
-                                                fill: true,
-                                                className: "rounded-full object-cover border-4 border-emerald-300 shadow-md"
-                                            }, void 0, false, {
-                                                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                                lineNumber: 194,
-                                                columnNumber: 23
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                            lineNumber: 193,
-                                            columnNumber: 21
-                                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-3xl mb-4",
-                                            children: m.name?.[0]?.toUpperCase() || '?'
-                                        }, void 0, false, {
-                                            fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                            lineNumber: 202,
-                                            columnNumber: 21
-                                        }, this),
+                                        getInitialAvatar(m.name, 'bg-emerald-200', 'text-emerald-800'),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-xl font-bold text-gray-800",
+                                            className: "text-xl font-bold text-gray-800 mt-4",
                                             children: m.name
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                            lineNumber: 207,
+                                            lineNumber: 158,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -556,23 +430,23 @@ function Home() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                            lineNumber: 208,
+                                            lineNumber: 159,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                    lineNumber: 191,
+                                    lineNumber: 155,
                                     columnNumber: 17
                                 }, this)
                             }, m.id, false, {
                                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                                lineNumber: 187,
+                                lineNumber: 151,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                        lineNumber: 180,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this)
                 ]
@@ -588,7 +462,7 @@ function Home() {
         columnNumber: 5
     }, this);
 }
-_s(Home, "H7ykMH8Y3Y5TzRGlhVNaP+3URp4=", false, function() {
+_s(Home, "fBR/lunz08A5n78LZJokTI2Huno=", false, function() {
     return [
         useStore
     ];
@@ -603,7 +477,7 @@ function StatCard({ icon, title, value, color }) {
                 children: icon
             }, void 0, false, {
                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                lineNumber: 224,
+                lineNumber: 175,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -611,7 +485,7 @@ function StatCard({ icon, title, value, color }) {
                 children: (value ?? 0).toLocaleString('bn-BD')
             }, void 0, false, {
                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                lineNumber: 229,
+                lineNumber: 180,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -619,13 +493,13 @@ function StatCard({ icon, title, value, color }) {
                 children: title
             }, void 0, false, {
                 fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                lineNumber: 230,
+                lineNumber: 181,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-        lineNumber: 223,
+        lineNumber: 174,
         columnNumber: 5
     }, this);
 }
