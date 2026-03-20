@@ -15,7 +15,7 @@ export default function Home() {
     members,
     transactions,
     fetchData,
-    isLoading,
+    // isLoading,
   } = useStore();
 
   useEffect(() => {
@@ -32,13 +32,13 @@ export default function Home() {
     .sort((a, b) => (b.totalDonated || 0) - (a.totalDonated || 0))
     .slice(0, 4);
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-2xl text-gray-700 animate-pulse">লোড হচ্ছে...</p>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+  //       <p className="text-2xl text-gray-700 animate-pulse">লোড হচ্ছে...</p>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-gray-50">

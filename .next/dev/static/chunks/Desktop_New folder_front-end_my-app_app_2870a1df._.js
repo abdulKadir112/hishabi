@@ -158,7 +158,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 function Home() {
     _s();
-    const { netBalance, totalDonation, totalExpense, members, transactions, fetchData, isLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$app$2f$lib$2f$store$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
+    const { netBalance, totalDonation, totalExpense, members, transactions, fetchData } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$app$2f$lib$2f$store$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Home.useEffect": ()=>{
             fetchData();
@@ -171,23 +171,13 @@ function Home() {
         ...safeTransactions
     ].sort((a, b)=>new Date(b.date || b.createdAt || 0) - new Date(a.date || a.createdAt || 0)).slice(0, 5);
     const topDonors = members.filter((m)=>(m.totalDonated || 0) > 0).sort((a, b)=>(b.totalDonated || 0) - (a.totalDonated || 0)).slice(0, 4);
-    if (isLoading) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "min-h-screen bg-gray-50 flex items-center justify-center",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "text-2xl text-gray-700 animate-pulse",
-                children: "লোড হচ্ছে..."
-            }, void 0, false, {
-                fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-                lineNumber: 38,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/Desktop/New folder/front-end/my-app/app/page.js",
-            lineNumber: 37,
-            columnNumber: 7
-        }, this);
-    }
+    // if (isLoading) {
+    //   return (
+    //     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+    //       <p className="text-2xl text-gray-700 animate-pulse">লোড হচ্ছে...</p>
+    //     </div>
+    //   );
+    // }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-gray-50",
         children: [
@@ -665,7 +655,7 @@ function Home() {
         columnNumber: 5
     }, this);
 }
-_s(Home, "H7ykMH8Y3Y5TzRGlhVNaP+3URp4=", false, function() {
+_s(Home, "z0wftPH99zkk1Y6PRkgbjTeBBSs=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$app$2f$lib$2f$store$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
     ];
