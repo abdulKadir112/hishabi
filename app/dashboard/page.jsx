@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useStore } from '../lib/store';
 
 const API_BASE = process.env.NODE_ENV === 'production'
-  ? 'https://hishabiapi.onrender.com'
+  ? 'https://hishabi-api.vercel.app'
   : 'http://localhost:5000';
 
 export default function Dashboard() {
@@ -41,7 +41,7 @@ export default function Dashboard() {
     if (isLogged) {
       fetchData();
     }
-  }, [isLogged, fetchData]);
+  }, [isLogged]);
 
   const handleLogin = () => {
     if (pass === 'admin123') {
@@ -52,34 +52,33 @@ export default function Dashboard() {
     }
   };
 
+  // ✅ FIXED (JSON)
   const handleAddDonation = async () => {
-    if (
-      !donation.amount ||
-      Number(donation.amount) <= 0 ||
-      !donation.donorName.trim() ||
-      !donation.receiverName.trim()
-    ) {
+    if (!donation.amount || Number(donation.amount) <= 0 || !donation.donorName.trim() || !donation.receiverName.trim()) {
       return alert('সব প্রয়োজনীয় তথ্য দিন');
     }
 
     setLoading(true);
     try {
-      const formData = new FormData();
-      formData.append('type', 'donation');
-      formData.append('amount', donation.amount);
-      formData.append('note', donation.reason.trim() || '');
-      formData.append('donorName', donation.donorName.trim());
-      formData.append('donorPhone', donation.donorPhone.trim() || '');
-      formData.append('donorAddress', donation.donorAddress.trim() || '');
-      formData.append('receiverName', donation.receiverName.trim());
-      formData.append('receiverPhone', donation.receiverPhone.trim() || '');
-      formData.append('receiverAddress', donation.receiverAddress.trim() || '');
-
-      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || 'দান যোগ করতে ব্যর্থ');
-      }
+      const res = await fetch(`${API_BASE}/hishab`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    type: 'donation',
+    amount: Number(donation.amount || 0),
+    note: donation.reason?.trim() || '',
+    donorName: donation.donorName?.trim() || '',
+    donorPhone: donation.donorPhone?.trim() || '',
+    donorAddress: donation.donorAddress?.trim() || '',
+    receiverName: donation.receiverName?.trim() || '',
+    receiverPhone: donation.receiverPhone?.trim() || '',
+    receiverAddress: donation.receiverAddress?.trim() || '',
+    date: new Date().toISOString(),
+  }),
+});
+      if (!res.ok) throw new Error('দান যোগ করতে ব্যর্থ');
 
       alert('দান সফলভাবে যোগ হয়েছে!');
       setDonation({
@@ -87,47 +86,47 @@ export default function Dashboard() {
         receiverName: '', receiverPhone: '', receiverAddress: '',
         amount: '', reason: ''
       });
+
       fetchData();
     } catch (err) {
-      alert('দান যোগ করতে ব্যর্থ: ' + err.message);
+      alert(err.message);
     } finally {
       setLoading(false);
     }
   };
 
+  // ✅ FIXED (JSON)
   const handleAddExpense = async () => {
-    if (
-      !expense.amount ||
-      Number(expense.amount) <= 0 ||
-      !expense.receiverName.trim()
-    ) {
+    if (!expense.amount || Number(expense.amount) <= 0 || !expense.receiverName.trim()) {
       return alert('সব প্রয়োজনীয় তথ্য দিন');
     }
 
     setLoading(true);
     try {
-      const formData = new FormData();
-      formData.append('type', 'expense');
-      formData.append('amount', expense.amount);
-      formData.append('note', expense.reason.trim() || '');
-      formData.append('receiverName', expense.receiverName.trim());
-      formData.append('receiverPhone', expense.receiverPhone.trim() || '');
-      formData.append('receiverAddress', expense.receiverAddress.trim() || '');
+      const res = await fetch(`${API_BASE}/hishab`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'expense',
+          amount: Number(expense.amount),
+          note: expense.reason.trim() || '',
+          receiverName: expense.receiverName.trim(),
+          receiverPhone: expense.receiverPhone.trim() || '',
+          receiverAddress: expense.receiverAddress.trim() || '',
+        }),
+      });
 
-      const res = await fetch(`${API_BASE}/hishab`, { method: 'POST', body: formData });
-      if (!res.ok) {
-        const err = await res.text();
-        throw new Error(err || 'খরচ যোগ করতে ব্যর্থ');
-      }
+      if (!res.ok) throw new Error('খরচ যোগ করতে ব্যর্থ');
 
       alert('খরচ সফলভাবে রেকর্ড হয়েছে!');
       setExpense({
         receiverName: '', receiverPhone: '', receiverAddress: '',
         amount: '', reason: ''
       });
+
       fetchData();
     } catch (err) {
-      alert('খরচ যোগ করতে ব্যর্থ: ' + err.message);
+      alert(err.message);
     } finally {
       setLoading(false);
     }
@@ -135,53 +134,42 @@ export default function Dashboard() {
 
   const handleDelete = async (id) => {
     if (!confirm('এই লেনদেন মুছে ফেলতে চান?')) return;
-    try {
-      setLoading(true);
-      await deleteTransaction(id);
-      alert('লেনদেন মুছে ফেলা হয়েছে');
-    } catch (err) {
-      alert('মুছে ফেলতে ব্যর্থ: ' + err.message);
-    } finally {
-      setLoading(false);
-    }
+    await deleteTransaction(id);
+    fetchData();
   };
 
   const startEdit = (tx) => {
     setEditingTx({ ...tx });
   };
 
+  // ✅ FIXED (JSON)
   const handleUpdate = async () => {
     if (!editingTx) return;
+
     setLoading(true);
     try {
-      const formData = new FormData();
-      formData.append('type', editingTx.type);
-      formData.append('amount', editingTx.amount);
-      formData.append('note', editingTx.note || editingTx.reason || '');
+      await editTransaction(editingTx._id || editingTx.id, {
+        type: editingTx.type,
+        amount: Number(editingTx.amount),
+        note: editingTx.note || '',
+        donorName: editingTx.donorName || '',
+        donorPhone: editingTx.donorPhone || '',
+        donorAddress: editingTx.donorAddress || '',
+        receiverName: editingTx.receiverName || '',
+        receiverPhone: editingTx.receiverPhone || '',
+        receiverAddress: editingTx.receiverAddress || '',
+      });
 
-      if (editingTx.type === 'donation') {
-        formData.append('donorName', editingTx.donorName || '');
-        formData.append('donorPhone', editingTx.donorPhone || '');
-        formData.append('donorAddress', editingTx.donorAddress || '');
-        formData.append('receiverName', editingTx.receiverName || '');
-        formData.append('receiverPhone', editingTx.receiverPhone || '');
-        formData.append('receiverAddress', editingTx.receiverAddress || '');
-      } else {
-        formData.append('receiverName', editingTx.receiverName || '');
-        formData.append('receiverPhone', editingTx.receiverPhone || '');
-        formData.append('receiverAddress', editingTx.receiverAddress || '');
-      }
-
-      await editTransaction(editingTx._id || editingTx.id, formData);
       alert('আপডেট সফল!');
       setEditingTx(null);
       fetchData();
     } catch (err) {
-      alert('আপডেট ব্যর্থ: ' + err.message);
+      alert(err.message);
     } finally {
       setLoading(false);
     }
   };
+
 
   if (!isLogged) {
     return (

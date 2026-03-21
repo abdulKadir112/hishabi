@@ -1,24 +1,2919 @@
-[00:00:11.152] Server  LOG     ✓ Ready in 10.5s
-[00:00:14.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:19.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:20.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:21.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:21.498] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:21.889] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:22.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:22.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:23.140] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:42.638] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:35.189] Server  LOG       Reload env: .env.local
-[00:01:35.461] Server  LOG     ✓ Compiled in 125ms
-[00:01:37.194] Browser ERROR   Fetch error: {}
-[00:01:37.386] Server  LOG       Reload env: .env.local
-[00:01:37.615] Server  LOG     ✓ Compiled in 56ms
-[00:01:41.706] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:43.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:44.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:45.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:47.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:20.989] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:31.967] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:12:39.994] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.980] Server  LOG     ✓ Ready in 5.2s
+[00:00:19.091] Server  LOG     ✓ Finished writing to filesystem cache in 10.1s
+[00:00:19.285] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.343] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.188] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.439] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.764] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:30.174] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:30.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:31.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:31.558] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:31.992] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:32.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:32.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:33.305] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.671] Browser ERROR   Fetch error: {}
+[00:10:02.429] Server  LOG     ✓ Compiled in 1353ms
+[00:10:02.668] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/lib/store.jsx:9:9
+Parsing ecmascript source code failed
+   7 |   || (process.env.NODE_ENV === 'development' 
+   8 |       ? 'http://localhost:5000' 
+>  9 |       : ');
+     |         ^^^
+  10 |
+  11 | export const useStore = create(
+  12 |   persist(
+
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+[00:10:43.939] Server  LOG     ✓ Compiled in 66ms
+[00:10:44.674] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/lib/store.jsx:9:14
+Parsing ecmascript source code failed
+   7 |   || (process.env.NODE_ENV === 'development' 
+   8 |       ? 'http://localhost:5000' 
+>  9 |       : https://hishabi-api.vercel.app/');
+     |              ^
+  10 |
+  11 | export const useStore = create(
+  12 |   persist(
+
+Expected ',', got ':'
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+[00:10:48.667] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/lib/store.jsx:9:14
+Parsing ecmascript source code failed
+   7 |   || (process.env.NODE_ENV === 'development' 
+   8 |       ? 'http://localhost:5000' 
+>  9 |       : https:hishabi-api.vercel.app/');
+     |              ^
+  10 |
+  11 | export const useStore = create(
+  12 |   persist(
+
+Expected ',', got ':'
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+[00:10:59.723] Server  LOG     ✓ Compiled in 35ms
+[00:11:00.680] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/lib/store.jsx:9:9
+Parsing ecmascript source code failed
+   7 |   || (process.env.NODE_ENV === 'development' 
+   8 |       ? 'http://localhost:5000' 
+>  9 |       : ');
+     |         ^^^
+  10 |
+  11 | export const useStore = create(
+  12 |   persist(
+
+Unterminated string constant
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/lib/store.jsx [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+[00:11:02.604] Server  LOG     ✓ Compiled in 229ms
+[00:11:03.679] Browser ERROR   Fetch error: {}
+[00:11:25.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:26.180] Browser ERROR   Fetch error: {}
+[00:11:27.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:27.692] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:28.062] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:28.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:28.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:29.284] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:29.765] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:30.063] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:30.538] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:30.813] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:31.234] Browser ERROR   Fetch error: {}
+[00:11:36.155] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:36.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:36.855] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:37.248] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:37.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:37.908] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:38.328] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:38.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:38.968] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:39.292] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:39.741] Browser ERROR   Fetch error: {}
+[00:12:06.902] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:07.333] Browser ERROR   Fetch error: {}
+[00:12:08.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:08.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:08.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:09.372] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:09.834] Browser ERROR   Fetch error: {}
+[00:12:10.228] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:10.585] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:11.023] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:11.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:11.946] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:12.304] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:12.646] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:12.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:13.386] Browser ERROR   Fetch error: {}
+[00:12:34.445] Server  LOG       Reload env: .env.local
+[00:12:39.803] Server  LOG       Reload env: .env.local
+[00:12:40.153] Server  LOG     ✓ Compiled in 199ms
+[00:12:40.446] Browser ERROR   Fetch error: {}
+[00:12:41.713] Server  LOG       Reload env: .env.local
+[00:12:41.999] Server  LOG     ✓ Compiled in 73ms
+[00:12:42.729] Browser ERROR   Fetch error: {}
+[00:12:45.448] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:45.879] Browser ERROR   Fetch error: {}
+[00:12:46.592] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:46.961] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:47.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:47.733] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:48.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:48.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:48.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:49.183] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:49.571] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:50.081] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:50.589] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:51.031] Browser ERROR   Fetch error: {}
+[00:12:57.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:58.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:58.559] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:58.840] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:59.278] Browser ERROR   Fetch error: {}
+[00:15:04.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:05.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:05.590] Browser ERROR   Fetch error: {}
+[00:21:20.166] Server  LOG     ✓ Compiled in 1035ms
+[00:21:29.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:30.727] Browser ERROR   Fetch error: {}
+[00:21:33.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:33.523] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:34.038] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:34.346] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:34.674] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:35.071] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:35.451] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:35.833] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:36.173] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:36.488] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:36.941] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:37.312] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:37.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:38.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:38.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:38.836] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:39.181] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:39.594] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:40.014] Browser ERROR   Fetch error: {}
+[00:22:16.391] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:16.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:17.232] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:17.670] Browser ERROR   Fetch error: {}
+[00:22:20.361] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:20.759] Browser ERROR   Fetch error: {}
+[00:22:21.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:21.661] Browser ERROR   Fetch error: {}
+[00:22:23.094] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:23.667] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:24.104] Browser ERROR   Fetch error: {}
+[00:25:14.962] Server  LOG     ✓ Compiled in 4.1s
+[00:25:16.675] Browser ERROR   Fetch error: {}
+[00:25:32.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:32.802] Browser ERROR   Fetch error: {}
+[00:25:34.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:34.760] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:35.269] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:35.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:36.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:36.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:36.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:37.291] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:37.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:38.107] Browser ERROR   Fetch error: {}
+[00:34:01.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:02.084] Browser ERROR   Fetch error: {}
+[00:41:02.534] Server  LOG     ✓ Compiled in 111ms
+[00:41:04.680] Browser ERROR   Fetch error: {}
+[00:41:16.477] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:17.033] Browser ERROR   Fetch error: {}
+[00:42:30.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:30.859] Browser ERROR   Fetch error: {}
+[00:42:52.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:52.318] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_49190a56._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
+[00:42:52.658] Browser ERROR   Fetch error: {}
+[00:42:53.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:54.288] Browser ERROR   Fetch error: {}
+[00:44:48.554] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:49.086] Browser ERROR   Fetch error: {}
+[00:45:13.678] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:14.228] Browser ERROR   Fetch error: {}
+[00:45:20.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:21.317] Browser ERROR   Fetch error: {}
+[00:48:52.363] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.434] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.439] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.443] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.449] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.454] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.476] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.481] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.487] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.492] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.497] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.502] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.507] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.512] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.516] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.520] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.527] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.530] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.535] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.558] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.689] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.694] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.699] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.703] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.709] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.714] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.717] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.781] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.786] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.790] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.794] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.818] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:48:52.821] Server  LOG     ✓ Compiled in 4s
+[00:48:53.672] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:49:09.093] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.115] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.119] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.123] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.129] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.157] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.161] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.166] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.170] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.174] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.179] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.184] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.189] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.193] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.200] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.205] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.210] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.235] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.240] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.245] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.250] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.255] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.259] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.264] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.270] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.275] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.279] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.284] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.290] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.298] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.304] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.312] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:09.323] Server  LOG     ✓ Compiled in 1892ms
+[00:49:09.680] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '..//lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '..//lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:49:10.154] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.158] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.200] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.204] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.209] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.215] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.219] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.223] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.229] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.236] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.240] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.244] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.253] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.257] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.261] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.267] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.273] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.287] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.291] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.296] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.327] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.333] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.337] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.340] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.346] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.351] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.355] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.360] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.367] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.372] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.375] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.381] Server  ERROR   ⨯ ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:49:10.385] Server  LOG     ✓ Compiled in 804ms
+[00:49:10.669] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:3:1
+Module not found: Can't resolve '../a/lib/store'
+  1 | 'use client';
+  2 |
+> 3 | import { useStore } from '../a/lib/store'; // path ঠিক করো
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useEffect } from 'react';
+  5 | import { format } from 'date-fns';
+  6 | import { bn } from 'date-fns/locale/bn';
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
+    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:49:14.300] Server  LOG     ✓ Compiled in 851ms
+[00:49:18.783] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:19.389] Browser ERROR   Fetch error: {}
+[00:49:26.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:27.486] Browser ERROR   Fetch error: {}
+[00:50:07.073] Server  LOG     ✓ Compiled in 188ms
+[00:50:07.672] Browser ERROR   Fetch error: {}
+[00:50:22.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:22.727] Browser ERROR   Fetch error: {}
+[00:50:44.881] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:45.437] Browser ERROR   Fetch error: {}
+[00:51:18.513] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:19.134] Browser ERROR   Fetch error: {}
+[00:54:29.219] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:29.920] Browser ERROR   Fetch error: {}
+[00:56:35.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:35.803] Browser ERROR   Fetch error: {}
+[00:56:38.241] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:38.755] Browser ERROR   Fetch error: {}
+[00:56:40.342] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:40.842] Browser ERROR   Fetch error: {}
+[00:57:13.643] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:14.215] Browser ERROR   Fetch error: {}
+[00:57:20.926] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:21.508] Browser ERROR   Fetch error: {}
+[00:57:23.207] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:23.424] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_49190a56._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
+[00:57:25.065] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:25.652] Browser ERROR   Fetch error: {}
+[01:01:10.811] Server  LOG     ✓ Compiled in 1360ms
+[01:01:11.428] Browser ERROR   Fetch error: {}
+[01:01:18.716] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:18.902] Browser ERROR   Fetch error: {}
+[01:01:24.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:24.775] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
+[01:01:24.775] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/f5163_next_dist_client_components_builtin_global-error_a427f714.js from module [project]/Desktop/New folder/front-end/my-app/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)
+[01:01:26.334] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:26.573] Browser ERROR   Fetch error: {}
+[01:02:08.541] Server  LOG     ✓ Compiled in 801ms
+[01:02:09.672] Browser ERROR   Fetch error: {}
+[01:02:14.923] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:15.420] Browser ERROR   Fetch error: {}
+[01:02:29.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:30.524] Browser ERROR   Fetch error: {}
+[01:02:36.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:37.467] Browser ERROR   Fetch error: {}
+[01:03:09.614] Server  LOG       Reload env: .env.local
+[01:03:17.687] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:18.199] Browser ERROR   Fetch error: {}
+[01:03:20.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:20.454] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_49190a56._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
+[01:03:22.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:22.681] Browser ERROR   Fetch error: {}
+[01:04:54.373] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:54.993] Browser ERROR   Fetch error: {}
+[01:06:35.910] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:06:36.487] Browser ERROR   Fetch error: {}
+[01:17:39.363] Server  LOG     ✓ Compiled in 1293ms
+[01:17:39.738] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data.transactions) ? data.transactions : [];
+                let totalDonation = Number(data.totalDonation) || 0;
+                let totalExpense = Number(data.totalExpense) || 0;
+                let netBalance = Number(data.netBalance) || 0;
+                if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
+                    totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    netBalance = totalDonation - totalExpense;
+                }
+                // Derive members from transactions
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx.type === 'donation' && tx.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] []
+[01:17:46.159] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:17:58.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:43.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:49.555] Server  LOG     ○ Compiling /dashboard ...
+[01:19:25.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:28.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:32.537] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:36.368] Server  LOG     ○ Compiling /receiver ...
+[01:19:38.457] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:40.603] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:44.303] Server  LOG     ○ Compiling /members ...
+[01:19:54.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:57.490] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:20:00.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:20.392] Server  LOG     ✓ Compiled in 1009ms
+[01:44:22.696] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [true, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data.transactions) ? data.transactions : [];
+                let totalDonation = Number(data.totalDonation) || 0;
+                let totalExpense = Number(data.totalExpense) || 0;
+                let netBalance = Number(data.netBalance) || 0;
+                if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
+                    totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    netBalance = totalDonation - totalExpense;
+                }
+                // Derive members from transactions
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx.type === 'donation' && tx.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] [true]
+[01:44:30.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:44:47.862] Server  LOG     ✓ Compiled in 1014ms
+[01:44:50.132] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [true] [true, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data.transactions) ? data.transactions : [];
+                let totalDonation = Number(data.totalDonation) || 0;
+                let totalExpense = Number(data.totalExpense) || 0;
+                let netBalance = Number(data.netBalance) || 0;
+                if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
+                    totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    netBalance = totalDonation - totalExpense;
+                }
+                // Derive members from transactions
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx.type === 'donation' && tx.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }]
+[01:44:52.902] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:45:46.737] Server  LOG     ✓ Compiled in 132ms
+[01:45:49.710] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [false, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data.transactions) ? data.transactions : [];
+                let totalDonation = Number(data.totalDonation) || 0;
+                let totalExpense = Number(data.totalExpense) || 0;
+                let netBalance = Number(data.netBalance) || 0;
+                if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
+                    totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
+                    netBalance = totalDonation - totalExpense;
+                }
+                // Derive members from transactions
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx.type === 'donation' && tx.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] [false]
+[01:54:16.113] Server  LOG     ✓ Compiled in 165ms
+[01:54:19.373] Server  LOG     ✓ Compiled in 236ms
+[01:55:32.130] Server  LOG     ✓ Compiled in 220ms
+[01:55:40.893] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:55:46.808] Browser ERROR   Fetch error: {}
+[02:00:32.341] Server  LOG       Reload env: .env
+[02:01:12.565] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:01:22.532] Browser ERROR   Fetch error: {}
+[02:05:48.480] Server  LOG     ✓ Compiled in 633ms
+[02:06:10.046] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:06:21.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:16.205] Server  LOG     ✓ Compiled in 9.1s
+[02:11:27.298] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:18:36.853] Server  LOG     ✓ Compiled in 1072ms
+[02:18:53.607] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
