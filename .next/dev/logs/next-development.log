@@ -1,108 +1,40 @@
-[00:00:02.780] Server  LOG     ✓ Ready in 2.1s
-[00:00:10.842] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:17.924] Server  LOG     ✓ Compiled in 931ms
-[00:08:33.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:17.769] Server  LOG     ✓ Compiled in 170ms
-[00:15:22.764] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:08.531] Server  LOG     ✓ Compiled in 962ms
-[00:18:11.353] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:54.606] Server  LOG     ✓ Compiled in 93ms
-[00:21:01.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:04.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:05.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:06.207] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:06.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:06.954] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:07.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:08.751] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:13.228] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:15.239] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:18.546] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:21.778] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:36.748] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:44.475] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:51.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:24.957] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:29.079] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:29.220] Browser LOG     ReceiversList - Transactions length: 0
-[00:24:29.220] Browser LOG     Sample transactions: []
-[00:30:24.385] Server  LOG     ✓ Compiled in 175ms
-[00:30:25.556] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:25.556] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:28.164] Server  LOG     [ReceiversList] No transactions available yet
-[00:30:29.483] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:29.483] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:29.483] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:29.666] Browser LOG     [ReceiversList] Transactions count: 0
-[00:30:31.211] Server  LOG     [ReceiversList] No transactions available yet
-[00:30:32.036] Server  LOG     [ReceiversList] No transactions available yet
-[00:30:33.409] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:33.409] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:33.409] Browser LOG     [ReceiversList] No transactions available yet
-[00:30:33.409] Browser LOG     [ReceiversList] Transactions count: 0
-[00:39:42.831] Server  LOG     ✓ Compiled in 100ms
-[00:39:44.930] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[00:39:44.931] Browser LOG     [ReceiversList] Transactions count: 0
-[00:39:44.931] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:39:44.931] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:39:44.931] Browser LOG     [ReceiversList] Transactions count: 15
-[00:39:44.931] Browser LOG     [ReceiversList] First receiverName: মমিন
-[00:39:44.931] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
-[00:39:49.459] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:49.621] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[00:39:49.621] Browser LOG     [ReceiversList] Transactions count: 0
-[00:39:50.229] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:39:50.229] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:39:50.229] Browser LOG     [ReceiversList] Transactions count: 15
-[00:39:50.229] Browser LOG     [ReceiversList] First receiverName: মমিন
-[00:39:50.229] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
-[00:40:05.371] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:05.686] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[00:40:05.686] Browser LOG     [ReceiversList] Transactions count: 0
-[00:40:18.988] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:19.193] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[00:40:19.193] Browser LOG     [ReceiversList] Transactions count: 0
-[00:40:35.542] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:40:35.542] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:40:35.542] Browser LOG     [ReceiversList] Transactions count: 15
-[00:40:35.542] Browser LOG     [ReceiversList] First receiverName: মমিন
-[00:40:35.542] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
-[00:41:24.235] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:43.902] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:42:37.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:46:12.285] Server  LOG     ✓ Compiled in 287ms
-[00:46:23.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:56.406] Server  LOG     ✓ Compiled in 94ms
-[01:00:03.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:13:31.484] Server  LOG     ✓ Compiled in 90ms
-[01:13:38.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:13:44.316] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:17:15.894] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:18:23.093] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:21:42.878] Server  LOG     ✓ Compiled in 678ms
-[01:21:47.929] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:21:52.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:03.729] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:10.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:22.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:22:28.936] Server  LOG     ✓ Compiled in 310ms
-[01:22:34.349] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:24:58.993] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:19.647] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:26.981] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:40.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:46.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:25:47.117] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[01:25:47.117] Browser LOG     [ReceiversList] Transactions count: 0
-[01:25:47.680] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[01:25:47.680] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[01:25:47.680] Browser LOG     [ReceiversList] Transactions count: 15
-[01:25:47.680] Browser LOG     [ReceiversList] First receiverName: মমিন
-[01:25:47.680] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
-[01:30:09.807] Server  LOG     ✓ Compiled in 557ms
-[01:30:20.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:25.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:30:36.957] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:32:45.273] Server  LOG     ✓ Compiled in 195ms
-[01:33:11.780] Server  LOG     ✓ Compiled in 103ms
-[01:33:12.867] Server  LOG     ✓ Compiled in 106ms
+[00:00:03.143] Server  LOG     ✓ Ready in 2.3s
+[00:00:06.245] Server  LOG     ○ Compiling / ...
+[00:00:11.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:39.876] Server  LOG     ✓ Compiled in 235ms
+[00:07:51.812] Server  LOG     ✓ Compiled in 351ms
+[00:10:06.461] Server  LOG     ✓ Compiled in 99ms
+[00:12:03.559] Server  LOG     ✓ Compiled in 63ms
+[00:12:07.982] Server  LOG     ✓ Compiled in 171ms
+[00:12:15.799] Server  LOG     ✓ Compiled in 65ms
+[00:12:16.793] Server  LOG     ✓ Compiled in 47ms
+[00:12:18.934] Server  LOG     ✓ Compiled in 41ms
+[00:12:24.949] Server  LOG     ✓ Compiled in 48ms
+[00:12:26.970] Server  LOG     ✓ Compiled in 47ms
+[00:12:30.594] Server  LOG     ✓ Compiled in 32ms
+[00:13:37.019] Server  LOG     ✓ Compiled in 57ms
+[00:13:40.106] Server  LOG     ✓ Compiled in 49ms
+[00:13:42.671] Server  LOG     ✓ Compiled in 57ms
+[00:13:49.098] Server  LOG     ✓ Compiled in 71ms
+[00:14:01.633] Server  LOG     ✓ Compiled in 41ms
+[00:14:02.258] Browser ERROR   Received `%s` for a non-boolean attribute `%s`.
+
+If you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}. true cal cal true cal
+[00:14:03.778] Server  LOG     ✓ Compiled in 42ms
+[00:14:06.087] Server  LOG     ✓ Compiled in 75ms
+[00:14:08.078] Server  LOG     ✓ Compiled in 95ms
+[00:14:09.470] Server  LOG     ✓ Compiled in 52ms
+[00:14:36.295] Server  LOG     ✓ Compiled in 53ms
+[00:14:39.100] Server  LOG     ✓ Compiled in 47ms
+[00:14:41.591] Server  LOG     ✓ Compiled in 56ms
+[00:14:48.419] Server  LOG     ✓ Compiled in 47ms
+[00:14:50.933] Server  LOG     ✓ Compiled in 60ms
+[00:15:02.864] Server  LOG     ✓ Compiled in 37ms
+[00:15:04.590] Server  LOG     ✓ Compiled in 175ms
+[00:15:05.581] Server  LOG     ✓ Compiled in 145ms
+[00:15:11.819] Server  LOG     ✓ Compiled in 70ms
+[00:15:22.116] Server  LOG     ✓ Compiled in 81ms
+[00:15:48.421] Server  LOG     ✓ Compiled in 60ms
+[00:15:54.069] Server  LOG     ✓ Compiled in 62ms
+[00:15:59.378] Server  LOG     ✓ Compiled in 50ms
+[00:16:02.998] Server  LOG     ✓ Compiled in 67ms

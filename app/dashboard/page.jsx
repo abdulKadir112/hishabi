@@ -189,7 +189,7 @@ export default function Dashboard() {
           >
             লগইন
           </button>
-          <p className="text-sm text-gray-300 mt-4">demo password: admin123</p>
+          <p className="text-sm text-gray-300 mt-4">Forget your password?</p>
         </div>
       </div>
     );
