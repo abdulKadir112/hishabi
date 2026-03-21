@@ -17,11 +17,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$fr
 'use client';
 ;
 ;
-// const API_BASE = process.env.NEXT_PUBLIC_API_URL 
-//   || (process.env.NODE_ENV === 'development' 
-//       ? 'http://localhost:5000' 
-//       : 'https://hishabi-api.vercel.app');
-const API_BASE = ("TURBOPACK compile-time value", "https://hishabi-api.vercel.app") || (("TURBOPACK compile-time truthy", 1) ? 'http://localhost:5000' : "TURBOPACK unreachable");
+// ✅ FIXED API BASE (IMPORTANT)
+const API_BASE = ("TURBOPACK compile-time value", "https://hishabi-api.vercel.app") || 'https://hishabi-api.vercel.app';
 const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$New__folder$2f$front$2d$end$2f$my$2d$app$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["persist"])((set, get)=>({
         transactions: [],
         members: [],
@@ -29,6 +26,7 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
         totalExpense: 0,
         netBalance: 0,
         isLoading: false,
+        // ✅ FETCH
         fetchData: async ()=>{
             set({
                 isLoading: true
@@ -41,12 +39,13 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                 let totalDonation = Number(data.totalDonation) || 0;
                 let totalExpense = Number(data.totalExpense) || 0;
                 let netBalance = Number(data.netBalance) || 0;
+                // fallback calculation
                 if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
                     totalDonation = transactions.filter((t)=>t.type === 'donation').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     totalExpense = transactions.filter((t)=>t.type === 'expense').reduce((sum, t)=>sum + (Number(t.amount) || 0), 0);
                     netBalance = totalDonation - totalExpense;
                 }
-                // Derive members from transactions
+                // members derive
                 const memberMap = new Map();
                 transactions.forEach((tx)=>{
                     if (tx.type === 'donation' && tx.donorName?.trim()) {
@@ -79,11 +78,15 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                 });
             }
         },
-        addTransaction: async (formData)=>{
+        // ✅ ADD TRANSACTION
+        addTransaction: async (payload)=>{
             try {
                 const res = await fetch(`${API_BASE}/hishab`, {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
                 });
                 if (!res.ok) throw new Error('Add failed');
                 await get().fetchData();
@@ -93,6 +96,7 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                 return false;
             }
         },
+        // ✅ DELETE
         deleteTransaction: async (id)=>{
             try {
                 const res = await fetch(`${API_BASE}/hishab/${id}`, {
@@ -104,17 +108,20 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
                 console.error('Delete error:', err);
             }
         },
-        // Edit: backend-এ PATCH না থাকলে delete + add করে simulate
-        editTransaction: async (id, updatedFormData)=>{
+        // ✅ EDIT (FIXED)
+        editTransaction: async (id, payload)=>{
             try {
-                // প্রথমে delete
+                // delete old
                 await fetch(`${API_BASE}/hishab/${id}`, {
                     method: 'DELETE'
                 });
-                // তারপর নতুন add
+                // add new
                 const res = await fetch(`${API_BASE}/hishab`, {
                     method: 'POST',
-                    body: updatedFormData
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
                 });
                 if (!res.ok) throw new Error('Edit failed');
                 await get().fetchData();
@@ -125,7 +132,7 @@ const useStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$
             }
         }
     }), {
-    name: 'group-fund-final-v6',
+    name: 'group-fund-final-v7',
     partialize: (state)=>({
             members: state.members,
             totalDonation: state.totalDonation,
