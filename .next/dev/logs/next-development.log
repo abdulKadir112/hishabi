@@ -1,380 +1,386 @@
-[00:00:04.416] Server  LOG     > [PWA] PWA support is disabled
-[00:00:04.417] Server  LOG     > [PWA] PWA support is disabled
-[00:00:05.212] Server  LOG     ✓ Ready in 4.7s
-[00:08:25.274] Server  LOG     ○ Compiling / ...
-[00:08:29.471] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:18.880] Server  ERROR   ⨯ ReferenceError: any is not defined
-[00:09:18.930] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:09:19.736] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:19.927] Browser ERROR   uncaughtError: ReferenceError: any is not defined
-[00:13:16.499] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:13:18.309] Server  ERROR   ⨯ ReferenceError: any is not defined
-[00:13:19.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:19.896] Browser ERROR   uncaughtError: ReferenceError: any is not defined
-[00:13:28.573] Server  ERROR   ⨯ ReferenceError: any is not defined
-[00:13:29.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:29.512] Browser ERROR   uncaughtError: ReferenceError: any is not defined
-[00:16:28.892] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:26:36.959] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+[00:00:04.503] Server  LOG     > [PWA] PWA support is disabled
+[00:00:04.504] Server  LOG     > [PWA] PWA support is disabled
+[00:00:05.313] Server  LOG     ✓ Ready in 4.8s
+[00:00:08.511] Server  LOG     ○ Compiling / ...
+[00:00:09.600] Server  ERROR   TypeError: Invalid URL
+[00:00:09.620] Server  ERROR   ⨯ Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:00:10.750] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.064] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:00:11.064] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:00:11.064] Browser ERROR   uncaughtError: Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:00:41.001] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:43.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:27.784] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:27.784] Browser ERROR   uncaughtError: ReferenceError: s is not defined
+[00:01:28.405] Server  ERROR   ⨯ ReferenceError: s is not defined
+[00:01:29.213] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:30.048] Browser ERROR   uncaughtError: ReferenceError: s is not defined
+[00:01:30.432] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:31.293] Server  ERROR   ⨯ ReferenceError: sic is not defined
+[00:01:32.167] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.037] Browser ERROR   uncaughtError: ReferenceError: s is not defined
+[00:01:34.357] Server  ERROR   ⨯ ReferenceError: se is not defined
+[00:01:35.028] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:36.049] Browser ERROR   uncaughtError: ReferenceError: se is not defined
+[00:01:36.765] Server  ERROR   ⨯ ReferenceError: src is not defined
+[00:01:37.238] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:38.037] Browser ERROR   uncaughtError: ReferenceError: src is not defined
+[00:01:40.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.057] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
 
-Previous: %s
-Incoming: %s useEffect [async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }]
-[00:27:08.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:12.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:30:26.595] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:32:10.936] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+Caused by:
+    Syntax Error
 
-Previous: %s
-Incoming: %s useEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }] [async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }]
-[00:32:31.062] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:15.060] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
 
-Previous: %s
-Incoming: %s useEffect [async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
-            set({
-                isLoading: true
-            });
-            try {
-                const res = await fetch(`${API_BASE}/hishab`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
-                // ======================
-                // SAFE CALCULATION (DONATION + EXPENSE FIX)
-                // ======================
-                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
-                const netBalance = totalDonation - totalExpense;
-                // ======================
-                // MEMBERS DERIVE (SAFE)
-                // ======================
-                const memberMap = new Map();
-                transactions.forEach((tx)=>{
-                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
-                        const name = tx.donorName.trim();
-                        const key = name.toLowerCase();
-                        if (!memberMap.has(key)) {
-                            memberMap.set(key, {
-                                id: `donor-${key}`,
-                                name,
-                                phone: tx.donorPhone || '',
-                                address: tx.donorAddress || '',
-                                totalDonated: 0
-                            });
-                        }
-                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
-                    }
-                });
-                set({
-                    transactions,
-                    members: Array.from(memberMap.values()),
-                    totalDonation,
-                    totalExpense,
-                    netBalance,
-                    isLoading: false
-                });
-            } catch (err) {
-                console.error('Fetch error:', err);
-                set({
-                    isLoading: false
-                });
-            }
-        }]
-[00:37:23.767] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:37:24.391] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:51.957] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:41:52.588] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:52.918] Browser LOG     [ReceiversList] No transactions → fetching data now...
-[00:41:52.918] Browser LOG     [ReceiversList] Transactions count: 0
-[00:41:53.412] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:41:53.412] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:41:53.412] Browser LOG     [ReceiversList] Transactions count: 15
-[00:41:53.412] Browser LOG     [ReceiversList] First receiverName: মমিন
-[00:41:53.412] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
-[00:43:10.896] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:10.896] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:11.937] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:11.937] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:15.897] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:15.897] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:17.032] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:17.032] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:21.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:21.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:23.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:23.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:43.948] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:43.948] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:46.071] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:46.071] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:48.910] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:48.910] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:53.905] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:53.905] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:58.020] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:58.020] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:58.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:43:58.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:20.904] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:20.904] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:23.995] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:23.995] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:24.902] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:24.902] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:28.898] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:28.898] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:37.894] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:37.894] Browser LOG     [ReceiversList] Extracted unique receivers: 1
-[00:44:44.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:46.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:50.580] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:44:55.300] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:44:56.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:16.463] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:02:16.464] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:02:16.464] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:02:16.902] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:02:16.902] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:02:16.903] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:02:17.142] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:02:17.142] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:02:17.143] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:02:17.267] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:17.623] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:18.136] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:02:19.046] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:02:19.477] Server  LOG     ○ Compiling /_error ...
+[00:02:20.600] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:20.760] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:20.761] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:20.920] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:21.202] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:21.211] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:02:21.720] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+
+Caused by:
+    Syntax Error
+[00:02:22.045] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × Expression expected
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·     ─
+ 48 │   );
+ 49 │ }
+    ╰────
+  × Unterminated regexp literal
+    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:47:1]
+ 44 │       <p
+ 45 │       Install App 
+ 46 │ 
+ 47 │     </button>
+    ·      ────────
+ 48 │   );
+ 49 │ }
+    ╰────
+
+Caused by:
+    Syntax Error
+[00:02:22.116] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:22.271] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:02:28.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:29.424] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:08:29.424] Browser ERROR   Image is missing required "src" property: <img>
+[00:08:29.424] Browser WARN    Image with src "" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:08:29.785] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+[00:08:30.128] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/logo.png" "received" null
+[00:08:30.660] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:08:30.661] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:30.866] Server  ERROR   TypeError: Invalid URL
+[00:08:30.892] Server  ERROR   ⨯ Error: Failed to parse src "../" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:32.063] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:33.262] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:33.262] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:33.262] Browser ERROR   uncaughtError: Error: Failed to parse src "../" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:33.429] Server  ERROR   TypeError: Invalid URL
+[00:08:33.443] Server  ERROR   ⨯ Error: Failed to parse src "../../" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:33.988] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:35.044] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:35.044] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:35.044] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:35.044] Browser ERROR   uncaughtError: Error: Failed to parse src "../../" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:36.117] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:08:36.977] Server  ERROR   TypeError: Invalid URL
+[00:08:36.987] Server  ERROR   ⨯ Error: Failed to parse src "../../public" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:37.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:38.243] Server  ERROR   TypeError: Invalid URL
+[00:08:38.254] Server  ERROR   ⨯ Error: Failed to parse src "../../public/" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:38.445] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:08:39.239] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:39.715] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:08:39.715] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:39.715] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:39.715] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:39.715] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:39.715] Browser ERROR   uncaughtError: Error: Failed to parse src "../../public/" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:40.326] Server  ERROR   TypeError: Invalid URL
+[00:08:40.338] Server  ERROR   ⨯ Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:40.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:41.125] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:41.125] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:41.125] Browser ERROR   uncaughtError: Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:48.370] Server  ERROR   TypeError: Invalid URL
+[00:08:48.384] Server  ERROR   ⨯ Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:08:49.100] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:49.278] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:49.278] Browser ERROR   {"message":"Failed to construct 'URL': Invalid URL"}
+[00:08:49.278] Browser ERROR   uncaughtError: Error: Failed to parse src "../../public/app_logo.png" on `next/image`, if using relative image it must start with a leading slash "/" or be an absolute URL (http:// or https://)
+[00:10:55.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:57.822] Browser WARN    Image with src "/app_logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.

@@ -113,6 +113,7 @@ export default function Home() {
           <a className='p-1' href="/" onClick={() => setMenuOpen(false)}>হোম</a>
           <a className='p-1' href="/donor" onClick={() => setMenuOpen(false)}>দানকারী</a>
           <a className='p-1' href="/receiver" onClick={() => setMenuOpen(false)}>গ্রহী</a>
+          <a className='p-1' href="/expenses" onClick={() => setMenuOpen(false)}>মোট খরচ</a>
           <a className='p-1' href="/members" onClick={() => setMenuOpen(false)}>সদস্য</a>
           <a className='p-1' href="/dashboard" onClick={() => setMenuOpen(false)}>ড্যাশবোর্ড</a>
         </div>
