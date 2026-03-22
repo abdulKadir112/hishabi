@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import InstallPWA from "../app/components/InstallPWA";
 import "./globals.css";
+import InstallPWA from "./components/InstallPWA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,35 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "প্রবাসী ফান্ড",
-  description: "Hishabi PWA App",
-
-  manifest: "../public/manifest.json",
-  themeColor: "#000000",
-
+  title: "প্রবাসী মুক্ত ফান্ড ",
+  description: "প্রবাসী মুক্ত ফান্ড অ্যাপ",
+  manifest: "/manifest.json",
   icons: {
-    apple: "../public/app logo.png",
+    icon: "./../public/app_logo.png",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <head>
-        {/* PWA Meta */}
-        <link rel="icon" href="../public/app logo.png" />
-        <meta name="theme-color" content="#000000" />
-      </head>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
-
         <InstallPWA />
       </body>
     </html>

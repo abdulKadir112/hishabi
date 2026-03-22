@@ -1,0 +1,22 @@
+{
+    "name": "প্রবাসী মুক্ত ফান্ড",
+    "short_name": "প্রবাসী ফান্ড",
+    "description": "প্রবাসী মুক্ত ফান্ড",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "./app_logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./app_logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
