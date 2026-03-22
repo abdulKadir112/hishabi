@@ -1,6 +1,6 @@
 {
-    "name": "Hishabi App",
-    "short_name": "Hishabi",
+    "name": "প্রবাসী ফান্ড App",
+    "short_name": "প্রবাসী ফান্ড",
     "description": "Hishabi Web App",
     "start_url": "/",
     "display": "standalone",
