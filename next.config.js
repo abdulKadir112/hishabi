@@ -1,5 +1,3 @@
-
-
 const withPWA = require("next-pwa")({
   dest: "public",
   register: true,
@@ -10,6 +8,9 @@ const withPWA = require("next-pwa")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // 🔥 Turbopack fix
+  turbopack: {},
 
   images: {
     remotePatterns: [
@@ -25,7 +26,6 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      // future external domains এখানে add করবা
     ],
   },
 };
