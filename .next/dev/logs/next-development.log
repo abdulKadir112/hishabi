@@ -1,737 +1,380 @@
-[00:00:05.355] Server  LOG     > [PWA] PWA support is disabled
-[00:00:05.356] Server  LOG     > [PWA] PWA support is disabled
-[00:00:08.873] Server  LOG     ✓ Ready in 8s
-[00:00:15.484] Server  LOG     ○ Compiling / ...
-[00:00:18.942] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:22.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:22.896] Server  LOG     ○ Compiling /_not-found ...
-[00:00:23.915] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:23.923] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:25.810] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:26.027] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:26.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:26.661] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:28.591] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:28.701] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:00:29.244] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:29.280] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:07:51.109] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:07:52.225] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:08:40.419] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:08:40.498] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:04.246] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:04.562] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:05.124] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:05.166] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:08.630] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:08.762] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:09.330] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:09.389] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:09.463] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:09.603] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:09:10.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:10.246] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:36.111] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:36.662] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:38.126] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:38.223] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:39.832] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:39.987] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:40.793] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:40.872] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:56.802] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:10:56.885] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:08.651] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:08.842] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:09.530] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:09.633] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:11.729] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:11.851] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:12.536] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:12.596] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:12.678] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:12.825] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:13.492] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:13.524] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
-Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
-[00:11:37.286] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
+[00:00:04.416] Server  LOG     > [PWA] PWA support is disabled
+[00:00:04.417] Server  LOG     > [PWA] PWA support is disabled
+[00:00:05.212] Server  LOG     ✓ Ready in 4.7s
+[00:08:25.274] Server  LOG     ○ Compiling / ...
+[00:08:29.471] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:18.880] Server  ERROR   ⨯ ReferenceError: any is not defined
+[00:09:18.930] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:09:19.736] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:19.927] Browser ERROR   uncaughtError: ReferenceError: any is not defined
+[00:13:16.499] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:13:18.309] Server  ERROR   ⨯ ReferenceError: any is not defined
+[00:13:19.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:19.896] Browser ERROR   uncaughtError: ReferenceError: any is not defined
+[00:13:28.573] Server  ERROR   ⨯ ReferenceError: any is not defined
+[00:13:29.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:29.512] Browser ERROR   uncaughtError: ReferenceError: any is not defined
+[00:16:28.892] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:36.959] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-https://nextjs.org/docs/messages/module-not-found
-[00:11:37.765] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
+Previous: %s
+Incoming: %s useEffect [async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }]
+[00:27:08.384] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:12.080] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:26.595] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:10.936] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-https://nextjs.org/docs/messages/module-not-found
-[00:11:40.275] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
-[00:11:40.276] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
-[00:11:40.277] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
-[00:11:40.553] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
-[00:11:40.554] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
-[00:11:40.554] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
-[00:11:40.876] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
-[00:11:40.877] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
-[00:11:40.877] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
-[00:11:40.941] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
+Previous: %s
+Incoming: %s useEffect [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] [async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }]
+[00:32:31.062] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
 
-https://nextjs.org/docs/messages/module-not-found
-[00:11:41.542] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:11:42.009] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:11:42.702] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '@/components/InstallPWA'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "@/components/InstallPWA";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:11:43.293] Server  LOG     ○ Compiling /_error ...
-[00:12:46.866] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:12:47.446] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:12:47.446] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Empty dependency (no request)
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:47.753] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:12:47.963] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Empty dependency (no request)
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:47.977] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Empty dependency (no request)
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:48.351] Browser ERROR   uncaughtError: Error: Module not found: Empty dependency (no request)
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:12:48.701] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Empty dependency (no request)
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:49.562] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:49.777] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:49.777] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '.'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from ".";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:49.917] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:50.122] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve '.'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from ".";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:50.129] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '.'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from ".";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:50.423] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '.'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from ".";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:12:50.705] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '.'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from ".";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:52.529] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:52.663] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:52.663] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '..'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "..";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:52.747] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:52.993] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve '..'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "..";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:53.004] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '..'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "..";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:53.092] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:53.706] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '../'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "../";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:53.779] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:53.973] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:54.054] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:12:54.260] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve '../'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "../";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:54.279] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '../'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "../";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:12:54.571] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "../";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:12:54.698] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve '../'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "../";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:00.395] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:00.595] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:00.595] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:00.752] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:00.970] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve './'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:00.979] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:01.331] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve './'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:13:01.731] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:02.599] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:02.803] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:02.803] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:02.974] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:03.170] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve './components'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:03.177] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:03.486] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve './components'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:13:03.703] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:03.819] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:03.984] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:04.190] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:04.190] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components/'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components/";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:04.391] Server  ERROR   ⨯ ./app/layout.tsx:4:1
-Module not found: Can't resolve './components/'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components/";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:04.404] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components/'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components/";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:04.869] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve './components/'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components/";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-
-[00:13:05.040] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:05.040] Browser ERROR   ./app/layout.tsx:4:1
-Module not found: Can't resolve './components/'
-  2 | import { Geist, Geist_Mono } from "next/font/google";
-  3 | import "./globals.css";
-> 4 | import InstallPWA from "./components/";
-    | ^
-  5 |
-  6 | const geistSans = Geist({
-  7 |   variable: "--font-geist-sans",
-
-https://nextjs.org/docs/messages/module-not-found
-[00:13:05.888] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:13:07.425] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:13:09.768] Browser ERROR   Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
-[00:14:26.566] Server  ERROR   ⨯ ./app/layout.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./app/layout.tsx
-[00:14:26.702] Browser ERROR   ./app/layout.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./app/layout.tsx
-[00:14:36.742] Server  ERROR   ⨯ ./app/layout.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./app/layout.tsx
-[00:14:36.775] Browser ERROR   ./app/layout.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-./app/layout.tsx
-[00:14:37.333] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-
-Caused by:
-    Syntax Error
-[00:14:37.701] Browser ERROR   ./app/layout.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:17:1]
- 14 │ });
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
-    ·          ───────
- 18 │ মুক্ত ফান্ড",
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
-    ╰────
-  × Expected ',', got 'ident'
-    ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\layout.tsx:18:1]
- 15 │ 
- 16 │ export const metadata: Metadata = {
- 17 │   title: "প্রবাসী 
- 18 │ মুক্ত ফান্ড",
-    · ───
- 19 │   description: "Hishabi PWA App",
- 20 │   manifest: "/manifest.json",
- 21 │   icons: {
-    ╰────
-
-Caused by:
-    Syntax Error
-[00:14:44.370] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:14:44.692] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:14:46.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:38.816] Browser ERROR   An empty string ("") was passed to the %s attribute. To fix this, either do not render the element at all or pass null to %s instead of an empty string. href href
-[00:15:56.741] Browser ERROR   An empty string ("") was passed to the %s attribute. To fix this, either do not render the element at all or pass null to %s instead of an empty string. href href
-[00:16:01.697] Browser ERROR   An empty string ("") was passed to the %s attribute. To fix this, either do not render the element at all or pass null to %s instead of an empty string. href href
-[00:16:19.469] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Previous: %s
+Incoming: %s useEffect [async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }] [[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object], false, async ()=>{
+            set({
+                isLoading: true
+            });
+            try {
+                const res = await fetch(`${API_BASE}/hishab`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transactions = Array.isArray(data?.transactions) ? data.transactions : [];
+                // ======================
+                // SAFE CALCULATION (DONATION + EXPENSE FIX)
+                // ======================
+                const totalDonation = transactions.filter((t)=>t?.type === 'donation').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const totalExpense = transactions.filter((t)=>t?.type === 'expense').reduce((sum, t)=>sum + (Number(t?.amount) || 0), 0);
+                const netBalance = totalDonation - totalExpense;
+                // ======================
+                // MEMBERS DERIVE (SAFE)
+                // ======================
+                const memberMap = new Map();
+                transactions.forEach((tx)=>{
+                    if (tx?.type === 'donation' && tx?.donorName?.trim()) {
+                        const name = tx.donorName.trim();
+                        const key = name.toLowerCase();
+                        if (!memberMap.has(key)) {
+                            memberMap.set(key, {
+                                id: `donor-${key}`,
+                                name,
+                                phone: tx.donorPhone || '',
+                                address: tx.donorAddress || '',
+                                totalDonated: 0
+                            });
+                        }
+                        memberMap.get(key).totalDonated += Number(tx.amount) || 0;
+                    }
+                });
+                set({
+                    transactions,
+                    members: Array.from(memberMap.values()),
+                    totalDonation,
+                    totalExpense,
+                    netBalance,
+                    isLoading: false
+                });
+            } catch (err) {
+                console.error('Fetch error:', err);
+                set({
+                    isLoading: false
+                });
+            }
+        }]
+[00:37:23.767] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:37:24.391] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:51.957] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:41:52.588] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:52.918] Browser LOG     [ReceiversList] No transactions → fetching data now...
+[00:41:52.918] Browser LOG     [ReceiversList] Transactions count: 0
+[00:41:53.412] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:41:53.412] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:41:53.412] Browser LOG     [ReceiversList] Transactions count: 15
+[00:41:53.412] Browser LOG     [ReceiversList] First receiverName: মমিন
+[00:41:53.412] Browser LOG     [ReceiversList] Unique receivers: ["মমিন"]
+[00:43:10.896] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:10.896] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:11.937] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:11.937] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:15.897] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:15.897] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:17.032] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:17.032] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:20.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:21.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:21.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:23.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:23.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:43.948] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:43.948] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:46.071] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:46.071] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:48.910] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:48.910] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:53.905] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:53.905] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:58.020] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:58.020] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:58.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:43:58.903] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:20.904] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:20.904] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:23.995] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:23.995] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:24.902] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:24.902] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:28.898] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:28.898] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:37.894] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:37.894] Browser LOG     [ReceiversList] Extracted unique receivers: 1
+[00:44:44.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:46.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:50.580] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:44:55.300] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:44:56.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

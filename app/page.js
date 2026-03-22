@@ -71,14 +71,15 @@ export default function Home() {
       <nav className="bg-emerald-700 text-white p-5 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
 
-          <h1 className="text-3xl font-bold flex items-center gap-3">
-          প্রবাসী ফান্ড <span className="text-4xl">💰</span>
+          <h1 className="tezt-2xl md:text-3xl font-bold flex items-center gap-3">
+          প্রবাসী মুক্ত ফান্ড <span className="text-4xl">💰</span>
           </h1>
 
           <div className="hidden md:flex gap-8 text-lg">
             <a href="/" className="hover:underline">হোম</a>
             <a href="/donor" className="hover:underline">দানকারী</a>
             <a href="/receiver" className="hover:underline">গ্রহী</a>
+            <a href="/expenses" className="hover:underline">মোট খরচ</a>
             <a href="/members" className="hover:underline">সদস্য</a>
             <a href="/dashboard" className="hover:underline">ড্যাশবোর্ড</a>
           </div>

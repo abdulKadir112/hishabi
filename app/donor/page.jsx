@@ -89,13 +89,13 @@ export default function DonorsList() {
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             {/* Search */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <Search className="absolute  left-3 top-1/2 transform -translate-y-1/2 text-gray-700" size={20} />
               <input
                 type="text"
                 placeholder="দানকারীর নাম খুঁজুন..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full text-gray-800 pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               />
             </div>
 
@@ -104,14 +104,14 @@ export default function DonorsList() {
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value)}
-                className="w-full sm:w-48 pl-4 pr-10 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none cursor-pointer"
+                className="text-gray-700 w-full sm:w-48 pl-4 pr-10 py-3 rounded-xl border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none cursor-pointer"
               >
                 <option value="all">সব দানকারী</option>
                 <option value="top10">শীর্ষ ১০ দানকারী</option>
                 <option value="bottom10">সর্বনিম্ন ১০ দানকারী</option>
                 <option value="frequent">৫+ বার দানকারী</option>
               </select>
-              <Filter className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" size={18} />
+              <Filter className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" size={18} />
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-// ✅ FIXED API BASE (IMPORTANT)
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL ||
   'https://hishabi-api.vercel.app';
@@ -18,42 +17,43 @@ export const useStore = create(
       netBalance: 0,
       isLoading: false,
 
-      // ✅ FETCH
+      // ======================
+      // FETCH DATA (FIXED SAFE)
+      // ======================
       fetchData: async () => {
         set({ isLoading: true });
 
         try {
           const res = await fetch(`${API_BASE}/hishab`);
+
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
           const data = await res.json();
 
-          const transactions = Array.isArray(data.transactions)
+          const transactions = Array.isArray(data?.transactions)
             ? data.transactions
             : [];
 
-          let totalDonation = Number(data.totalDonation) || 0;
-          let totalExpense = Number(data.totalExpense) || 0;
-          let netBalance = Number(data.netBalance) || 0;
+          // ======================
+          // SAFE CALCULATION (DONATION + EXPENSE FIX)
+          // ======================
+          const totalDonation = transactions
+            .filter((t) => t?.type === 'donation')
+            .reduce((sum, t) => sum + (Number(t?.amount) || 0), 0);
 
-          // fallback calculation
-          if (totalDonation === 0 && totalExpense === 0 && transactions.length > 0) {
-            totalDonation = transactions
-              .filter(t => t.type === 'donation')
-              .reduce((sum, t) => sum + (Number(t.amount) || 0), 0);
+          const totalExpense = transactions
+            .filter((t) => t?.type === 'expense')
+            .reduce((sum, t) => sum + (Number(t?.amount) || 0), 0);
 
-            totalExpense = transactions
-              .filter(t => t.type === 'expense')
-              .reduce((sum, t) => sum + (Number(t.amount) || 0), 0);
+          const netBalance = totalDonation - totalExpense;
 
-            netBalance = totalDonation - totalExpense;
-          }
-
-          // members derive
+          // ======================
+          // MEMBERS DERIVE (SAFE)
+          // ======================
           const memberMap = new Map();
 
-          transactions.forEach(tx => {
-            if (tx.type === 'donation' && tx.donorName?.trim()) {
+          transactions.forEach((tx) => {
+            if (tx?.type === 'donation' && tx?.donorName?.trim()) {
               const name = tx.donorName.trim();
               const key = name.toLowerCase();
 
@@ -86,7 +86,9 @@ export const useStore = create(
         }
       },
 
-      // ✅ ADD TRANSACTION
+      // ======================
+      // ADD TRANSACTION (NO CHANGE)
+      // ======================
       addTransaction: async (payload) => {
         try {
           const res = await fetch(`${API_BASE}/hishab`, {
@@ -105,7 +107,9 @@ export const useStore = create(
         }
       },
 
-      // ✅ DELETE
+      // ======================
+      // DELETE (NO CHANGE)
+      // ======================
       deleteTransaction: async (id) => {
         try {
           const res = await fetch(`${API_BASE}/hishab/${id}`, {
@@ -120,15 +124,15 @@ export const useStore = create(
         }
       },
 
-      // ✅ EDIT (FIXED)
+      // ======================
+      // EDIT (NO CHANGE LOGIC)
+      // ======================
       editTransaction: async (id, payload) => {
         try {
-          // delete old
           await fetch(`${API_BASE}/hishab/${id}`, {
             method: 'DELETE',
           });
 
-          // add new
           const res = await fetch(`${API_BASE}/hishab`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -149,6 +153,8 @@ export const useStore = create(
 
     {
       name: 'group-fund-final-v7',
+
+      // IMPORTANT: expense store-এ persist রাখা safe
       partialize: (state) => ({
         members: state.members,
         totalDonation: state.totalDonation,
