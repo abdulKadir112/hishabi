@@ -72,7 +72,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
 
           <h1 className="text-3xl font-bold flex items-center gap-3">
-            গ্রুপ ফান্ড <span className="text-4xl">💰</span>
+          প্রবাসী ফান্ড <span className="text-4xl">💰</span>
           </h1>
 
           <div className="hidden md:flex gap-8 text-lg">
@@ -122,8 +122,8 @@ export default function Home() {
         {/* net balance */}
         <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-3xl shadow-2xl p-12 text-center mb-12">
           <p className="text-xl opacity-90">মোট নেট ব্যালেন্স</p>
-          <p className="text-7xl md:text-8xl font-extrabold mt-4">
-            ৳ {(netBalance ?? 0).toLocaleString('bn-BD')}
+          <p className="text-xl md:text-8xl font-extrabold mt-4">
+             {(netBalance ?? 0).toLocaleString('bn-BD')} ৳
           </p>
         </div>
 
@@ -239,7 +239,7 @@ function StatCard({ icon, title, value, color }) {
       <div className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${colorMap[color]}`}>
         {icon}
       </div>
-      <p className="text-4xl font-bold text-gray-800">
+      <p className=" text-xl md:text-4xl font-bold text-gray-800">
         {(value ?? 0).toLocaleString('bn-BD')}
       </p>
       <p className="text-gray-600 mt-2">{title}</p>

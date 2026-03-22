@@ -1,122 +1,667 @@
-[00:00:03.977] Server  LOG     ✓ Ready in 3.3s
-[00:00:13.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:24.835] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:40.861] Server  LOG     ✓ Compiled in 1084ms
-[00:03:41.460] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:124:2456
-Parsing ecmascript source code failed
-  122 |       <div className="max-w-7xl mx-auto p-6 md:p-10">
-  123 |
-> 124 |        {/* net balance */} <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-3xl shadow-2xl p-12 text-center mb-12"> <p className="text-xl opacity-90">মোট নেট ব্যালেন্স</p> <p className="text-7xl md:text-8xl font-extrabold mt-4"> ৳ {(netBalance ?? 0).toLocaleString('bn-BD')} </p> </div> {/* stats */} <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"> <StatCard icon={<ArrowUp />} title="মোট দান" value={totalDonation} color="emerald" /> <StatCard icon={<ArrowDown />} title="মোট খরচ" value={totalExpense} color="red" /> <StatCard icon={<Gift />} title="মোট লেনদেন" value={safeTransactions.length} color="purple" /> <StatCard icon={<Users />} title="মোট সদস্য" value={(members || []).length} color="blue" /> </div> {/* recent */} <h2 className="text-4xl font-bold mb-8 text-gray-800">সাম্প্রতিক লেনদেন</h2> <div className="bg-white rounded-3xl shadow-xl overflow-hidden mb-12"> {recent.length === 0 ? ( <p className="text-center py-16 text-gray-500 text-xl"> কোনো লেনদেন হয়নি এখনো </p> ) : ( recent.map((t) => { const isDonation = t.type === 'donation'; return ( <div key={t._id || t.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border-b last:border-0 hover:bg-gray-50 transition" > <div className="flex items-center gap-4 w-full sm:w-auto"> {isDonation ? ( <> {getInitialAvatar(t.donorName, 'bg-indigo-200', 'text-indigo-800')} <div> <p className="font-semibold text-lg"> <span className="text-indigo-700">{t.donorName || 'অজ্ঞাত'}</span> <span className="text-gray-500 mx-2">→</span> <span className="text-blue-700">{t.receiverName || 'অজ্ঞাত'}</span> </p> <p className="text-sm text-gray-500 mt-1"> {t.date ? format(new Date(t.date), 'dd MMMM yyyy', { locale: bn }) : 'তারিখ নেই'} </p> </div> </> ) : ( <> {getInitialAvatar(t.receiverName, 'bg-red-200', 'text-red-800')} <div> <p className="font-semibold text-lg text-red-700"> খরচ: {t.receiverName || 'অজ্ঞাত'} </p> <p className="text-sm text-gray-500 mt-1"> {t.date ? format(new Date(t.date), 'dd MMMM yyyy', { locale: bn }) : 'তারিখ নেই'} </p> {t.note && ( <p className="text-sm text-gray-600 mt-1 italic"> {t.note} </p> )} </div> </> )} </div> <p className={font-bold text-xl whitespace-nowrap ${ isDonation ? 'text-indigo-600' : 'text-red-600' }} > {isDonation ? '+' : '-'} ৳ {(t.amount ?? 0).toLocaleString('bn-BD')} </p> </div> ); }) )} </div> {/* top donors */} <h2 className="text-4xl font-bold mb-8 text-gray-800">শীর্ষ দানকারী</h2> <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"> {topDonors.length === 0 ? ( <p className="col-span-full text-center py-16 text-gray-600 text-xl"> এখনো কোনো দানকারী নেই। ড্যাশবোর্ডে গিয়ে দান রেকর্ড করুন। </p> ) : ( topDonors.map((m) => ( <div key={m.id} className="bg-white rounded-3xl shadow-lg p-6 hover:shadow-xl transition border border-gray-100" > <div className="flex flex-col items-center text-center"> {getInitialAvatar(m.name, 'bg-emerald-200', 'text-emerald-800')} <h3 className="text-xl font-bold text-gray-800 mt-4"> {m.name} </h3> <p className="text-emerald-600 font-semibold mt-2 text-lg"> ৳ {(m.totalDonated || 0).toLocaleString('bn-BD')} </p> </div> </div> )) )} </div> </div> </div> ); } // ✅ SAFE StatCard (NO dynamic tailwind issue) function StatCard({ icon, title, value, color }) { const colorMap = { emerald: 'bg-emerald-100 text-emerald-600', red: 'bg-red-100 text-red-600', purple: 'bg-purple-100 text-purple-600', blue: 'bg-blue-100 text-blue-600', }; return ( <div className="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4 border-gray-200 hover:border-indigo-500 transition"> <div className={w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${colorMap[color]}} > {icon} </div> <p className="text-4xl font-bold text-gray-800"> {(value ?? 0).toLocaleString('bn-BD')} </p> <p className="text-gray-600 mt-2">{title}</p> </div> ); }
-      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^^^^
+[00:00:05.001] Server  LOG     > [PWA] PWA support is disabled
+[00:00:05.003] Server  LOG     > [PWA] PWA support is disabled
+[00:00:05.401] Server  LOG     ✓ Ready in 5s
+[00:00:22.411] Server  LOG     ○ Compiling / ...
+[00:00:26.370] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:00:31.761] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:34.076] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:00:34.274] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:00:34.716] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:02:52.538] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:02:52.751] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:02:54.104] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:03:03.235] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:03:03.882] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:03.949] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:05.641] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:05.778] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:06.207] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:16.589] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:17.131] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:05:19.324] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected '</', got 'ident'
-[00:03:55.252] Server  LOG     ✓ Compiled in 194ms
-[00:03:55.692] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:25.328] Server  LOG     ✓ Compiled in 82ms
-[00:06:25.465] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:193:3
-Parsing ecmascript source code failed
-  191 | // ✅ SAFE StatCard (NO dynamic tailwind issue)
-  192 | function StatCard({ icon, title, value, color }) {
-> 193 |   const colorMap = {
-      |   ^^^^^
-  194 |     emerald: 'bg-emerald-100 text-emerald-600',
-  195 |     red: 'bg-red-100 text-red-600',
-  196 |     purple: 'bg-purple-100 text-purple-600',
+https://nextjs.org/docs/messages/module-not-found
+[00:05:20.498] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected '</', got 'const'
+https://nextjs.org/docs/messages/module-not-found
+[00:05:22.604] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:05:22.604] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:05:22.605] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:05:24.073] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:05:24.073] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:05:24.073] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:05:25.081] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\System Volume Information'
+[00:05:25.081] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\hiberfil.sys'
+[00:05:25.081] Server  ERROR   Watchpack Error (initial scan): Error: EINVAL: invalid argument, lstat 'C:\swapfile.sys'
+[00:05:25.194] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+https://nextjs.org/docs/messages/module-not-found
+[00:05:26.282] Server  LOG     ○ Compiling /_error ...
+[00:05:26.283] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
-[00:07:53.464] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:193:3
-Parsing ecmascript source code failed
-  191 | // ✅ SAFE StatCard (NO dynamic tailwind issue)
-  192 | function StatCard({ icon, title, value, color }) {
-> 193 |   const colorMap = {
-      |   ^^^^^
-  194 |     emerald: 'bg-emerald-100 text-emerald-600',
-  195 |     red: 'bg-red-100 text-red-600',
-  196 |     purple: 'bg-purple-100 text-purple-600',
+https://nextjs.org/docs/messages/module-not-found
+[00:05:29.381] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected '</', got 'const'
+https://nextjs.org/docs/messages/module-not-found
 
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+[00:05:30.367] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '@/components/InstallPWA'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "@/components/InstallPWA";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
-[00:08:00.458] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:193:3
-Parsing ecmascript source code failed
-  191 | // ✅ SAFE StatCard (NO dynamic tailwind issue)
-  192 | function StatCard({ icon, title, value, color }) {
-> 193 |   const colorMap = {
-      |   ^^^^^
-  194 |     emerald: 'bg-emerald-100 text-emerald-600',
-  195 |     red: 'bg-red-100 text-red-600',
-  196 |     purple: 'bg-purple-100 text-purple-600',
+https://nextjs.org/docs/messages/module-not-found
+[00:06:14.721] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:15.044] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:15.044] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Empty dependency (no request)
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected '</', got 'const'
+https://nextjs.org/docs/messages/module-not-found
+[00:06:15.480] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Empty dependency (no request)
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+https://nextjs.org/docs/messages/module-not-found
+[00:06:15.491] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Empty dependency (no request)
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
-[00:12:40.974] Server  LOG     ✓ Compiled in 71ms
-[00:12:41.457] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:197:3
-Parsing ecmascript source code failed
-  195 | // ✅ SAFE StatCard (NO dynamic tailwind issue)
-  196 | function StatCard({ icon, title, value, color }) {
-> 197 |   const colorMap = {
-      |   ^^^^^
-  198 |     emerald: 'bg-emerald-100 text-emerald-600',
-  199 |     red: 'bg-red-100 text-red-600',
-  200 |     purple: 'bg-purple-100 text-purple-600',
+https://nextjs.org/docs/messages/module-not-found
+[00:06:17.834] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '..'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "..";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected '</', got 'const'
+https://nextjs.org/docs/messages/module-not-found
+[00:06:18.359] Browser ERROR   uncaughtError: Error: Module not found: Empty dependency (no request)
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+https://nextjs.org/docs/messages/module-not-found
 
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
-[00:12:45.824] Server  LOG     ✓ Compiled in 51ms
-[00:15:47.290] Server  LOG     ✓ Compiled in 330ms
-[00:15:47.456] Browser ERROR   ./Desktop/New folder/front-end/my-app/app/page.js:277:12
-Parsing ecmascript source code failed
-  275 |       </div>
-  276 |
-> 277 |       <div className="max-w-7xl mx-auto p-6 md:p-10">
-      |            ^^^^^^^^^
-  278 |
-  279 |         <div className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-3xl shadow-2xl p-12 text-center mb-12">
-  280 |           <p className="text-xl opacity-90">মোট নেট ব্যালেন্স</p>
+[00:06:18.587] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:18.587] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '..'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "..";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Expected ';', '}' or <eof>
+https://nextjs.org/docs/messages/module-not-found
+[00:06:18.852] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:18.852] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-Import traces:
-  Client Component Browser:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component Browser]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
+https://nextjs.org/docs/messages/module-not-found
+[00:06:18.983] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '../'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
 
-  Client Component SSR:
-    ./Desktop/New folder/front-end/my-app/app/page.js [Client Component SSR]
-    ./Desktop/New folder/front-end/my-app/app/page.js [Server Component]
-[00:18:20.618] Server  LOG     ✓ Compiled in 71ms
-[00:18:26.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:26.889] Browser ERROR   unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_49190a56._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)
-[00:19:12.871] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+https://nextjs.org/docs/messages/module-not-found
+[00:06:18.996] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:21.807] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:06:22.293] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:24.346] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:24.346] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:24.615] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:24.678] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:24.689] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:26.477] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:27.488] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:27.533] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../app'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:06:27.566] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:30.424] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../app/components'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:06:30.921] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:30.921] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:30.921] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components/'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components/";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:31.177] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:06:31.243] Server  ERROR   ⨯ ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components/'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components/";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:31.269] Browser ERROR   ./app/layout.tsx:3:1
+Module not found: Can't resolve '../app/components/'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components/";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+[00:06:32.958] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:1:1]
+ 1 │ import { useEffect } from "react";
+   ·          ─────────
+ 2 │ 
+ 3 │ export default function InstallPWA() {
+ 3 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:06:34.109] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '../app/components/'
+  1 | import type { Metadata } from "next";
+  2 | import { Geist, Geist_Mono } from "next/font/google";
+> 3 | import InstallPWA from "../app/components/";
+    | ^
+  4 | import "./globals.css";
+  5 |
+  6 | const geistSans = Geist({
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:06:34.297] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:1:1]
+ 1 │ import { useEffect } from "react";
+   ·          ─────────
+ 2 │ 
+ 3 │ export default function InstallPWA() {
+ 3 │   useEffect(() => {
+   ╰────
+[00:06:52.579] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:1:1]
+ 1 │ import { useEffect } from "react";
+   ·          ─────────
+ 2 │ 
+ 3 │ export default function InstallPWA() {
+ 3 │   useEffect(() => {
+   ╰────
+
+[00:06:52.719] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:1:1]
+ 1 │ import { useEffect } from "react";
+   ·          ─────────
+ 2 │ 
+ 3 │ export default function InstallPWA() {
+ 3 │   useEffect(() => {
+   ╰────
+[00:07:35.430] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:35.811] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:35.812] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ 
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:36.000] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:36.153] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ 
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:36.164] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ 
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:39.011] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ 
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+[00:07:39.257] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:07:39.257] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ 
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+[00:07:39.596] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:07:39.596] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ ""
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:39.713] Server  ERROR   ⨯ ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ ""
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:39.758] Browser ERROR   ./app/components/InstallPWA.js
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ ""
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+Import trace for requested module:
+./app/components/InstallPWA.js
+./app/layout.tsx
+[00:07:42.739] Browser ERROR   uncaughtError: ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × You're importing a component that needs `useEffect`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+  │
+  │  Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+  │
+
+   ╭─[C:\Users\Abdul Kadir\Desktop\New folder\front-end\my-app\app\components\InstallPWA.js:4:1]
+ 1 │ 
+ 2 │ ""
+ 3 │ 
+ 4 │ import { useEffect } from "react";
+   ·          ─────────
+ 5 │ 
+ 6 │ export default function InstallPWA() {
+ 6 │   useEffect(() => {
+   ╰────
+
+[00:07:52.401] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:07:56.994] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:58.673] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:07:58.896] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:07:59.634] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:08:02.884] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:08:07.215] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:08:07.227] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:44.027] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:45.863] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:46.009] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:46.470] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:48.193] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:49.025] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:49.393] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:50.069] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:52.003] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:09:52.642] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /_not-found. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:10:04.085] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:10:06.361] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:22.946] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:25.933] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:28.814] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:31.320] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:37.436] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:42.184] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:12:44.024] Server  WARN    ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport

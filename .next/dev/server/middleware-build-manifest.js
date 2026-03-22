@@ -1,24 +1,28 @@
 globalThis.__BUILD_MANIFEST = {
-  "pages": {
-    "/_app": []
-  },
-  "devFiles": [],
   "polyfillFiles": [
-    "static/chunks/f5163_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/polyfills.js"
+  ],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_3778202e._.js",
-    "static/chunks/f5163_next_dist_compiled_react-dom_a8ba05cd._.js",
-    "static/chunks/f5163_next_dist_compiled_react-server-dom-turbopack_b8b786b9._.js",
-    "static/chunks/f5163_next_dist_compiled_next-devtools_index_d340f050.js",
-    "static/chunks/f5163_next_dist_compiled_a1418076._.js",
-    "static/chunks/f5163_next_dist_client_0ea8a587._.js",
-    "static/chunks/f5163_next_dist_fbb1f8e2._.js",
-    "static/chunks/f5163_@swc_helpers_cjs_4f3579c9._.js",
-    "static/chunks/Desktop_New folder_front-end_my-app_a0ff3932._.js",
-    "static/chunks/turbopack-Desktop_New folder_front-end_my-app_f99ccf85._.js"
-  ]
+    "static/chunks/webpack.js",
+    "static/chunks/main-app.js"
+  ],
+  "rootMainFilesTree": {},
+  "pages": {
+    "/_app": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_app.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_error.js"
+    ]
+  }
 };
 globalThis.__BUILD_MANIFEST.lowPriorityFiles = [
 "/static/" + process.env.__NEXT_BUILD_ID + "/_buildManifest.js",

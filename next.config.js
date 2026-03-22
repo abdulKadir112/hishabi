@@ -1,24 +1,33 @@
-// next.config.js
+
+
+const withPWA = require("next-pwa")({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.pravatar.cc',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+        port: "",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        port: "",
+        pathname: "/**",
       },
-      // যদি আরও কোনো external image domain ব্যবহার করেন তাহলে এখানে যোগ করুন
+      // future external domains এখানে add করবা
     ],
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
