@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hishabi App",
+  title: "প্রবাসী ফান্ড",
   description: "Hishabi PWA App",
 
-  manifest: "/manifest.json",
+  manifest: "../public/manifest.json",
   themeColor: "#000000",
 
   icons: {
-    apple: "/icon-192.png",
+    apple: "../public/app logo.png",
   },
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* PWA Meta */}
-        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <link rel="icon" href="../public/app logo.png" />
         <meta name="theme-color" content="#000000" />
       </head>
 

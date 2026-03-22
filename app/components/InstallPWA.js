@@ -36,6 +36,7 @@ export default function InstallPWA() {
         background: "black",
         color: "white",
         borderRadius: 8,
+        
       }}
     >
       Install App
